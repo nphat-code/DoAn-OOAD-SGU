@@ -1,0 +1,27 @@
+﻿# OS generated files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+.DS_Store
+
+# Office / Temporary files
+~$*.xlsx
+~$*.docx
+~$*.pptx
+*.tmp
+*.bak
+*.swp
+
+# Build / IDE
+bin/
+obj/
+out/
+dist/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
