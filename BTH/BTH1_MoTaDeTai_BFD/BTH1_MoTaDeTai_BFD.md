@@ -92,63 +92,68 @@ Xuất phát từ thực tiễn trên, nhóm quyết định xây dựng đề t
 ```text
 HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN
 │
-├── 1.0 QUẢN LÝ DANH MỤC & CẤU HÌNH HỆ THỐNG
-│   ├── 1.1 Quản lý danh mục cụm sân & sân
+├── 1.0 QUẢN LÝ DANH MỤC VÀ CẤU HÌNH
+│   ├── 1.1 Quản lý danh mục sân
 │   │   ├── 1.1.1 Thêm sân mới
-│   │   ├── 1.1.2 Cập nhật thông tin sân (Tên sân, quy cách)
+│   │   ├── 1.1.2 Cập nhật thông tin sân
 │   │   └── 1.1.3 Chuyển trạng thái sân (Hoạt động, Bảo trì, Tạm đóng)
-│   ├── 1.2 Phân loại sân (Sân đơn, Sân đôi, Sân trong nhà, Sân ngoài trời)
+│   ├── 1.2 Quản lý loại sân
+│   │   ├── 1.2.1 Thiết lập loại sân (Sân đơn, Sân đôi, Sân trong nhà, Sân ngoài trời)
+│   │   └── 1.2.2 Thiết lập môn thể thao (Pickleball, Cầu lông, Futsal)
 │   ├── 1.3 Cấu hình bảng giá theo khung giờ
 │   │   ├── 1.3.1 Thiết lập giá giờ tiêu chuẩn (Giờ hành chính)
 │   │   └── 1.3.2 Thiết lập giá giờ cao điểm (Peak hours 17h-22h)
-│   └── 1.4 Cấu hình bảng giá phụ thu & quy định
-│       ├── 1.4.1 Phụ thu cuối tuần / Ngày nghỉ lễ
-│       ├── 1.4.2 Phụ thu chơi quá giờ (Overtime policy)
-│       └── 1.4.3 Thiết lập quy định hoàn hủy cọc (% cọc theo thời gian hủy)
+│   └── 1.4 Cấu hình phụ thu và chính sách hoàn cọc
+│       ├── 1.4.1 Cấu hình phụ thu cuối tuần và ngày lễ
+│       ├── 1.4.2 Cấu hình phụ thu quá giờ chơi
+│       └── 1.4.3 Cấu hình tỷ lệ hoàn cọc theo thời gian hủy
 │
-├── 2.0 QUẢN LÝ ĐẶT SÂN & LỊCH THI ĐẤU
+├── 2.0 QUẢN LÝ ĐẶT SÂN VÀ LỊCH THI ĐẤU
 │   ├── 2.1 Tra cứu lịch sân trống
-│   ├── 2.2 Đặt sân theo lượt (Vãng lai)
-│   │   ├── 2.2.1 Chọn sân & khung giờ mong muốn
-│   │   ├── 2.2.2 Giữ chỗ tạm thời (Khóa slot 10 phút)
-│   │   ├── 2.2.3 Xác nhận đặt & Thu tiền đặt cọc
-│   │   └── 2.2.4 Phát hành mã đặt sân & Mã QR nhận diện
-│   ├── 2.3 Đặt lịch sân cố định theo tháng (Cho Câu lạc bộ / Doanh nghiệp)
-│   │   ├── 2.3.1 Chọn lịch lặp lại hàng tuần theo tháng
-│   │   ├── 2.3.2 Kiểm tra xung đột lịch và tự động điều phối sân
-│   │   └── 2.3.3 Ký hợp đồng thuê sân định kỳ
-│   ├── 2.4 Hủy đặt sân & Xử lý hoàn cọc theo quy định
-│   └── 2.5 Điều chỉnh lịch đặt (Đổi sân, Dời ngày/giờ thi đấu)
+│   ├── 2.2 Đặt sân theo lượt
+│   │   ├── 2.2.1 Chọn sân và khung giờ thi đấu
+│   │   ├── 2.2.2 Khóa slot giữ chỗ tạm thời (10 phút)
+│   │   ├── 2.2.3 Xác nhận đặt và thanh toán tiền cọc
+│   │   └── 2.2.4 Phát hành mã đặt sân và mã QR check-in
+│   ├── 2.3 Đặt lịch sân cố định theo tháng
+│   │   ├── 2.3.1 Chọn lịch thi đấu định kỳ theo tuần trong tháng
+│   │   ├── 2.3.2 Kiểm tra xung đột lịch và điều phối sân
+│   │   └── 2.3.3 Thiết lập hợp đồng thuê sân định kỳ
+│   ├── 2.4 Hủy đặt sân và xử lý hoàn cọc
+│   └── 2.5 Điều chỉnh lịch đặt sân
 │
-├── 3.0 QUẢN LÝ VẬN HÀNH TẠI SÂN (LỄ TÂN & POS)
-│   ├── 3.1 Tiếp nhận khách & Check-in
+├── 3.0 QUẢN LÝ VẬN HÀNH TẠI SÂN
+│   ├── 3.1 Tiếp nhận khách và check-in
 │   │   ├── 3.1.1 Quét mã QR xác thực khách đặt trước
-│   │   ├── 3.1.2 Mở sân trực tiếp cho khách vào chơi ngay tại quầy
-│   │   └── 3.1.3 Đổi trạng thái sân sang "Đang sử dụng"
-│   ├── 3.2 Ghi nhận cho thuê dụng cụ (Vợt, bóng, giày, lưới)
-│   ├── 3.3 Bán lẻ nước giải khát & Phụ kiện thể thao tại chỗ
-│   ├── 3.4 Theo dõi thời lượng & Cảnh báo thời gian thực
+│   │   ├── 3.1.2 Mở sân trực tiếp cho khách tại quầy
+│   │   └── 3.1.3 Chuyển trạng thái sân sang "Đang sử dụng"
+│   ├── 3.2 Quản lý cho thuê dụng cụ
+│   │   ├── 3.2.1 Lập phiếu thuê dụng cụ (Vợt, bóng, giày)
+│   │   ├── 3.2.2 Kiểm tra hiện trạng khi khách hoàn trả
+│   │   └── 3.2.3 Ghi nhận phí thuê vào hóa đơn của sân
+│   ├── 3.3 Bán lẻ nước giải khát và phụ kiện
+│   ├── 3.4 Theo dõi thời lượng và cảnh báo quá giờ
 │   │   ├── 3.4.1 Cảnh báo sân sắp hết giờ trước 10 phút
-│   │   └── 3.4.2 Tự động ghi nhận giờ quá hạn và phụ thu
-│   └── 3.5 Lập phiếu thanh toán tổng hợp & In hóa đơn
+│   │   └── 3.4.2 Tự động tính phụ phí quá giờ khi chơi lố thời gian
+│   └── 3.5 Lập hóa đơn và thanh toán
 │
-├── 4.0 QUẢN LÝ KHO HÀNG HÓA & TÀI SẢN
-│   ├── 4.1 Quản lý danh mục hàng hóa (Nước, đồ ăn nhẹ, phụ kiện)
-│   ├── 4.2 Lập phiếu nhập kho từ nhà cung cấp
-│   ├── 4.3 Quản lý danh mục dụng cụ cho thuê & Kiểm kê định kỳ
-│   ├── 4.4 Ghi nhận hư hỏng, đền bù mất mát dụng cụ
-│   └── 4.5 Cảnh báo tồn kho dưới định mức an toàn
+├── 4.0 QUẢN LÝ KHO VÀ TÀI SẢN
+│   ├── 4.1 Quản lý danh mục hàng hóa
+│   ├── 4.2 Lập phiếu nhập kho
+│   ├── 4.3 Quản lý tài sản dụng cụ cho thuê
+│   ├── 4.4 Ghi nhận hư hỏng và đền bù
+│   └── 4.5 Cảnh báo tồn kho an toàn
 │
-└── 5.0 QUẢN LÝ KHÁCH HÀNG & BÁO CÁO THỐNG KÊ
-    ├── 5.1 Quản lý hồ sơ khách hàng & Thẻ hội viên (Tích lũy điểm)
-    ├── 5.2 Quản lý chương trình khuyến mãi & Mã giảm giá (Voucher)
+└── 5.0 QUẢN LÝ KHÁCH HÀNG VÀ BÁO CÁO
+    ├── 5.1 Quản lý khách hàng và thẻ hội viên
+    ├── 5.2 Quản lý khuyến mãi và voucher
     ├── 5.3 Báo cáo doanh thu
-    │   ├── 5.3.1 Báo cáo doanh thu tiền sân (Theo ngày/tháng/loại sân)
-    │   ├── 5.3.2 Báo cáo doanh thu dịch vụ phụ trợ (Nước uống, thuê vợt)
-    │   └── 5.3.3 Báo cáo doanh thu theo hình thức thanh toán (Tiền mặt/Chuyển khoản)
-    ├── 5.4 Báo cáo hiệu suất lấp đầy sân (Tỷ lệ khai thác theo giờ)
-    └── 5.5 Quản trị hệ thống & Phân quyền tài khoản
-        ├── 5.5.1 Quản lý người dùng (Admin, Quản lý, Lễ tân, Khách hàng)
+    │   ├── 5.3.1 Báo cáo doanh thu tiền sân
+    │   ├── 5.3.2 Báo cáo doanh thu dịch vụ phụ trợ
+    │   └── 5.3.3 Báo cáo doanh thu theo hình thức thanh toán
+    ├── 5.4 Báo cáo tỷ lệ lấp đầy sân
+    └── 5.5 Quản trị hệ thống và phân quyền
+        ├── 5.5.1 Quản lý tài khoản người dùng
         └── 5.5.2 Phân quyền chức năng theo vai trò
 ```
 
@@ -156,51 +161,51 @@ HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN
 
 ### 2.2. Sơ đồ BFD trực quan (Mermaid Diagram)
 
-Dưới đây là mã sơ đồ Mermaid để xem trực tiếp hoặc nhúng vào báo cáo:
+Dưới đây là mã sơ đồ Mermaid để xem trực tiếp hoặc nhúng vào báo cáo (Đồng bộ 100% với cây phân rã chức năng):
 
 ```mermaid
 graph TD
-    Root["HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO & ĐẶT SÂN"]
+    Root["HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN"]
 
-    Root --> F1["1.0 QUẢN LÝ DANH MỤC & CẤU HÌNH"]
-    Root --> F2["2.0 QUẢN LÝ ĐẶT SÂN & LỊCH"]
+    Root --> F1["1.0 QUẢN LÝ DANH MỤC VÀ CẤU HÌNH"]
+    Root --> F2["2.0 QUẢN LÝ ĐẶT SÂN VÀ LỊCH THI ĐẤU"]
     Root --> F3["3.0 QUẢN LÝ VẬN HÀNH TẠI SÂN"]
-    Root --> F4["4.0 QUẢN LÝ KHO & DỤNG CỤ"]
-    Root --> F5["5.0 QUẢN LÝ KHÁCH HÀNG & BÁO CÁO"]
+    Root --> F4["4.0 QUẢN LÝ KHO VÀ TÀI SẢN"]
+    Root --> F5["5.0 QUẢN LÝ KHÁCH HÀNG VÀ BÁO CÁO"]
 
     %% 1.0
     F1 --> F11["1.1 Quản lý danh mục sân"]
-    F1 --> F12["1.2 Phân loại sân"]
-    F1 --> F13["1.3 Cấu hình bảng giá theo giờ"]
-    F1 --> F14["1.4 Cấu hình phụ thu & hoàn cọc"]
+    F1 --> F12["1.2 Quản lý loại sân"]
+    F1 --> F13["1.3 Cấu hình bảng giá theo khung giờ"]
+    F1 --> F14["1.4 Cấu hình phụ thu và chính sách hoàn cọc"]
 
     %% 2.0
     F2 --> F21["2.1 Tra cứu lịch sân trống"]
-    F2 --> F22["2.2 Đặt sân theo lượt vãng lai"]
-    F2 --> F23["2.3 Đặt lịch sân cố định tháng"]
-    F2 --> F24["2.4 Hủy đặt sân & Hoàn cọc"]
-    F2 --> F25["2.5 Dời lịch & Đổi sân"]
+    F2 --> F22["2.2 Đặt sân theo lượt"]
+    F2 --> F23["2.3 Đặt lịch sân cố định theo tháng"]
+    F2 --> F24["2.4 Hủy đặt sân và xử lý hoàn cọc"]
+    F2 --> F25["2.5 Điều chỉnh lịch đặt sân"]
 
     %% 3.0
-    F3 --> F31["3.1 Tiếp nhận & Check-in QR"]
-    F3 --> F32["3.2 Quản lý thuê dụng cụ"]
-    F3 --> F33["3.3 Bán lẻ nước & phụ kiện"]
-    F3 --> F34["3.4 Theo dõi giờ & Cảnh báo"]
-    F3 --> F35["3.5 Thanh toán & In hóa đơn"]
+    F3 --> F31["3.1 Tiếp nhận khách và check-in"]
+    F3 --> F32["3.2 Quản lý cho thuê dụng cụ"]
+    F3 --> F33["3.3 Bán lẻ nước giải khát và phụ kiện"]
+    F3 --> F34["3.4 Theo dõi thời lượng và cảnh báo quá giờ"]
+    F3 --> F35["3.5 Lập hóa đơn và thanh toán"]
 
     %% 4.0
-    F4 --> F41["4.1 Quản lý danh mục sản phẩm"]
-    F4 --> F42["4.2 Nhập kho nhà cung cấp"]
-    F4 --> F43["4.3 Kiểm kê tài sản cho thuê"]
-    F4 --> F44["4.4 Ghi nhận đền bù hư hỏng"]
+    F4 --> F41["4.1 Quản lý danh mục hàng hóa"]
+    F4 --> F42["4.2 Lập phiếu nhập kho"]
+    F4 --> F43["4.3 Quản lý tài sản dụng cụ cho thuê"]
+    F4 --> F44["4.4 Ghi nhận hư hỏng và đền bù"]
     F4 --> F45["4.5 Cảnh báo tồn kho an toàn"]
 
     %% 5.0
-    F5 --> F51["5.1 Quản lý khách hàng & Thẻ hội viên"]
-    F5 --> F52["5.2 Quản lý khuyến mãi & Voucher"]
-    F5 --> F53["5.3 Báo cáo doanh thu đa chiều"]
+    F5 --> F51["5.1 Quản lý khách hàng và thẻ hội viên"]
+    F5 --> F52["5.2 Quản lý khuyến mãi và voucher"]
+    F5 --> F53["5.3 Báo cáo doanh thu"]
     F5 --> F54["5.4 Báo cáo tỷ lệ lấp đầy sân"]
-    F5 --> F55["5.5 Phân quyền người dùng & Bảo mật"]
+    F5 --> F55["5.5 Quản trị hệ thống và phân quyền"]
 ```
 
 ---
