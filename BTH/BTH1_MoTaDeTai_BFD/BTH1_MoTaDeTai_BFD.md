@@ -166,10 +166,10 @@ graph TD
     Root --> F2["2.0 QUẢN LÝ ĐẶT SÂN & LỊCH"]
     Root --> F3["3.0 QUẢN LÝ VẬN HÀNH TẠI SÂN"]
     Root --> F4["4.0 QUẢN LÝ KHO & DỤNG CỤ"]
-    Root --> F5["5.0 KHÁCH HÀNG & BÁO CÁO"]
+    Root --> F5["5.0 QUẢN LÝ KHÁCH HÀNG & BÁO CÁO"]
 
     %% 1.0
-    F1 --> F11["1.1 QL Danh mục sân"]
+    F1 --> F11["1.1 Quản lý danh mục sân"]
     F1 --> F12["1.2 Phân loại sân"]
     F1 --> F13["1.3 Cấu hình bảng giá theo giờ"]
     F1 --> F14["1.4 Cấu hình phụ thu & hoàn cọc"]
@@ -189,15 +189,15 @@ graph TD
     F3 --> F35["3.5 Thanh toán & In hóa đơn"]
 
     %% 4.0
-    F4 --> F41["4.1 QL Danh mục sản phẩm"]
+    F4 --> F41["4.1 Quản lý danh mục sản phẩm"]
     F4 --> F42["4.2 Nhập kho nhà cung cấp"]
     F4 --> F43["4.3 Kiểm kê tài sản cho thuê"]
     F4 --> F44["4.4 Ghi nhận đền bù hư hỏng"]
     F4 --> F45["4.5 Cảnh báo tồn kho an toàn"]
 
     %% 5.0
-    F5 --> F51["5.1 QL Khách hàng & Thẻ hội viên"]
-    F5 --> F52["5.2 QL Khuyến mãi & Voucher"]
+    F5 --> F51["5.1 Quản lý khách hàng & Thẻ hội viên"]
+    F5 --> F52["5.2 Quản lý khuyến mãi & Voucher"]
     F5 --> F53["5.3 Báo cáo doanh thu đa chiều"]
     F5 --> F54["5.4 Báo cáo tỷ lệ lấp đầy sân"]
     F5 --> F55["5.5 Phân quyền người dùng & Bảo mật"]
