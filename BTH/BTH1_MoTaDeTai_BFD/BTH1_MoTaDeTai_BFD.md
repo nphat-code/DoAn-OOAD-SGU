@@ -107,7 +107,7 @@ HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN
 │       └── 1.4.3 Thiết lập quy định hoàn hủy cọc (% cọc theo thời gian hủy)
 │
 ├── 2.0 QUẢN LÝ ĐẶT SÂN & LỊCH THI ĐẤU
-│   ├── 2.1 Tra cứu lịch sân trống trực quan (Timeline Matrix)
+│   ├── 2.1 Tra cứu lịch sân trống
 │   ├── 2.2 Đặt sân theo lượt (Vãng lai)
 │   │   ├── 2.2.1 Chọn sân & khung giờ mong muốn
 │   │   ├── 2.2.2 Giữ chỗ tạm thời (Khóa slot 10 phút)
@@ -175,7 +175,7 @@ graph TD
     F1 --> F14["1.4 Cấu hình phụ thu & hoàn cọc"]
 
     %% 2.0
-    F2 --> F21["2.1 Tra cứu lịch sân trống trực quan"]
+    F2 --> F21["2.1 Tra cứu lịch sân trống"]
     F2 --> F22["2.2 Đặt sân theo lượt vãng lai"]
     F2 --> F23["2.3 Đặt lịch sân cố định tháng"]
     F2 --> F24["2.4 Hủy đặt sân & Hoàn cọc"]
