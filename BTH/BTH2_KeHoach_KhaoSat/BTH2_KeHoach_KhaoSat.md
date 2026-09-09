@@ -7,32 +7,50 @@
 
 ## PHẦN 1: KẾ HOẠCH THỰC HIỆN DỰ ÁN (PROJECT SCHEDULE & GANTT)
 
-### 1.1. Lộ trình 15 tuần bám sát chương trình đào tạo SGU
+### 1.1. Lộ trình 12 tuần bám sát chương trình đào tạo SGU
 
 ```mermaid
 gantt
-    title LỘ TRÌNH THỰC HIỆN ĐỒ ÁN OOAD (15 TUẦN)
+    title LỘ TRÌNH THỰC HIỆN ĐỒ ÁN OOAD (12 TUẦN)
     dateFormat  YYYY-MM-DD
-    section Giai đoạn Khởi động & Khảo sát
-    BTH1 - Mô tả đề tài & Vẽ BFD         :done, bth1, 2025-09-01, 2025-09-14
-    BTH2 - Lập kế hoạch & Khảo sát Jotform:done, bth2, 2025-09-15, 2025-09-28
-    section Giai đoạn Phân tích Use Case
-    BTH3 - Vẽ sơ đồ Use Case tổng thể    :active, bth3, 2025-09-29, 2025-10-12
-    BTH4 - Viết đặc tả chi tiết Use Case :bth4, 2025-10-13, 2025-10-26
-    Nộp báo cáo tiến độ BTH1-4           :milestone, m1, 2025-10-26, 0d
-    section Giai đoạn Thiết kế Đối tượng & CSDL
-    BTH5 - Thiết kế sơ đồ Sequence       :bth5, 2025-10-27, 2025-11-09
-    BTH6 - Thiết kế sơ đồ lớp (Class)    :bth6, 2025-11-10, 2025-11-23
-    BTH7 - Thiết kế CSDL (RDM & Data Dict):bth7, 2025-11-24, 2025-11-30
-    BTH8 - Thiết kế UI & Bảng biến cố    :bth8, 2025-12-01, 2025-12-07
-    Nộp báo cáo tiến độ BTH5-8           :milestone, m2, 2025-12-07, 0d
-    section Giai đoạn Cài đặt & Vấn đáp
-    Lập trình Source code & Cài đặt CSDL :dev, 2025-11-15, 2025-12-08
-    Hoàn thiện Báo cáo Word/PDF & Poster :doc, 2025-12-04, 2025-12-09
-    Báo cáo vấn đáp đồ án tại phòng D401 :crit, defense, 2025-12-11, 2025-12-15
+    section GĐ 1: Khảo sát & Use Case
+    BTH1 - Mô tả đề tài & Vẽ BFD          :done, bth1, 2025-09-01, 7d
+    BTH2 - Lập kế hoạch & Khảo sát Jotform:done, bth2, after bth1, 7d
+    BTH3 - Thiết kế sơ đồ Use Case        :active, bth3, after bth2, 7d
+    BTH4 - Viết đặc tả Use Case chi tiết  :bth4, after bth3, 7d
+    Nộp báo cáo tiến độ GĐ 1 (BTH1-4)     :milestone, m1, after bth4, 0d
+    section GĐ 2: Thiết kế Đối tượng & CSDL
+    BTH5 - Thiết kế sơ đồ Sequence        :bth5, after bth4, 7d
+    BTH6 - Thiết kế sơ đồ lớp (Class)     :bth6, after bth5, 7d
+    BTH7 - Thiết kế CSDL (RDM 3NF)        :bth7, after bth6, 7d
+    BTH8 - Thiết kế UI & Bảng biến cố     :bth8, after bth7, 7d
+    Nộp báo cáo tiến độ GĐ 2 (BTH5-8)     :milestone, m2, after bth8, 0d
+    section GĐ 3: Cài đặt & Vấn đáp
+    Lập trình Source code & CSDL          :dev, 2025-10-13, 28d
+    Đóng gói bài nộp & Hoàn thiện báo cáo :doc, after bth8, 7d
+    Báo cáo vấn đáp đồ án tại phòng D401  :crit, defense, after doc, 7d
 ```
 
-### 1.2. Ma trận phân công trách nhiệm (RACI Matrix)
+### 1.2. Bảng phân bổ chi tiết công việc 12 tuần
+
+| Tuần | Hạng mục công việc | Sản phẩm đầu ra (Deliverables) | Mốc đánh giá |
+| :---: | :--- | :--- | :---: |
+| **Tuần 1** | **BTH1:** Viết mô tả đề tài & Vẽ mô hình phân rã chức năng BFD | Bản mô tả nghiệp vụ, Sơ đồ BFD chuẩn | Khởi động |
+| **Tuần 2** | **BTH2:** Lập kế hoạch 12 tuần & Bảng câu hỏi khảo sát Jotform | Kế hoạch Gantt, Link khảo sát người chơi/chủ sân | Khảo sát |
+| **Tuần 3** | **BTH3:** Xác định Actor & Thiết kế sơ đồ Use Case tổng thể/chi tiết | Sơ đồ Use Case Diagram hoàn chỉnh | Phân tích |
+| **Tuần 4** | **BTH4:** Viết hồ sơ đặc tả Use Case chi tiết cho từng chức năng | Tài liệu đặc tả Use Case chuẩn | **Nộp BTH1-4** |
+| **Tuần 5** | **BTH5:** Thiết kế sơ đồ tuần tự (Sequence Diagram) các ca chính | Sơ đồ Sequence Diagram (Check-in, Thuê đồ, Đặt sân) | Thiết kế |
+| **Tuần 6** | **BTH6:** Thiết kế sơ đồ lớp đối tượng (Class Diagram) & Bảng mô tả | Sơ đồ lớp, Bảng mô tả chi tiết thuộc tính & phương thức | Thiết kế |
+| **Tuần 7** | **BTH7:** Thiết kế Cơ sở dữ liệu quan hệ (RDM) chuẩn 3NF | Lược đồ CSDL quan hệ, Bảng từ điển dữ liệu (Data Dict) | Thiết kế |
+| **Tuần 8** | **BTH8:** Thiết kế Giao diện (Mockup UI) & Bảng mô tả biến cố | Bản thiết kế màn hình, Bảng mô tả UI & Biến cố Event | **Nộp BTH5-8** |
+| **Tuần 9** | **Cài đặt 1:** Xây dựng khung kiến trúc phần mềm & CSDL thực tế | CSDL chạy trên SQL Server/MySQL, Backend Core | Lập trình |
+| **Tuần 10**| **Cài đặt 2:** Lập trình chức năng đặt sân, vận hành lễ tân & POS | Các màn hình nghiệp vụ chính hoạt động được | Lập trình |
+| **Tuần 11**| **Đóng gói:** Hoàn thiện báo cáo, Poster A4, Thử nghiệm kịch bản live-code | File báo cáo hoàn chỉnh, Source code sạch, Poster A4 | Đóng gói |
+| **Tuần 12**| **Vấn đáp:** Báo cáo đồ án & Vấn đáp trực tiếp trước hội đồng SGU | Demo chương trình trên laptop & Trả lời vấn đáp | **BẢO VỆ CUỐI KỲ** |
+
+---
+
+### 1.3. Ma trận phân công trách nhiệm (RACI Matrix)
 
 * **R (Responsible)**: Người trực tiếp thực hiện chính
 * **A (Accountable)**: Người chịu trách nhiệm phê duyệt / kiểm tra
