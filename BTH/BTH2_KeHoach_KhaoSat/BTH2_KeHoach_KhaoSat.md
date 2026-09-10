@@ -11,34 +11,6 @@
 
 ![Sơ đồ Gantt tiến độ 12 tuần](./SoDoGantt_12Tuan.png)
 
-*Sơ đồ Gantt dạng biểu đồ (Mermaid):*
-
-```mermaid
-gantt
-    title LỘ TRÌNH THỰC HIỆN ĐỒ ÁN OOAD (12 TUẦN)
-    dateFormat  YYYY-MM-DD
-    axisFormat  Tuần %W
-
-    section GĐ 1: Phân tích yêu cầu
-    Mô tả đề tài & Vẽ sơ đồ BFD           :done, t1, 2025-09-01, 7d
-    Lập kế hoạch dự án & Khảo sát Jotform :done, t2, after t1, 7d
-    Thiết kế sơ đồ Use Case               :active, t3, after t2, 7d
-    Viết hồ sơ đặc tả Use Case chi tiết   :t4, after t3, 7d
-
-    section GĐ 2: Thiết kế hệ thống
-    Thiết kế sơ đồ tuần tự (Sequence)     :t5, after t4, 7d
-    Thiết kế sơ đồ lớp (Class Diagram)    :t6, after t5, 7d
-    Thiết kế CSDL quan hệ (RDM 3NF)       :t7, after t6, 7d
-    Thiết kế Giao diện UI & Bảng biến cố  :t8, after t7, 7d
-
-    section GĐ 3: Cài đặt & Nghiệm thu
-    Xây dựng khung phần mềm & Cài đặt DB  :t9, after t8, 7d
-    Lập trình các chức năng chính & POS   :t10, after t9, 7d
-    Kiểm thử, đóng gói & Viết báo cáo     :t11, after t10, 7d
-    Báo cáo vấn đáp đồ án tại phòng D401  :crit, t12, after t11, 7d
-    Nộp Báo cáo hoàn chỉnh & Vấn đáp      :milestone, m_end, after t12, 0d
-```
-
 ### 1.2. Bảng phân bổ chi tiết công việc 12 tuần
 
 | Tuần | Hạng mục công việc | Sản phẩm đầu ra (Deliverables) |
