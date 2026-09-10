@@ -9,6 +9,10 @@
 
 ### 1.1. Lộ trình 12 tuần bám sát chương trình đào tạo SGU
 
+![Sơ đồ Gantt tiến độ 12 tuần](./SoDoGantt_12Tuan.png)
+
+*Sơ đồ Gantt dạng biểu đồ (Mermaid):*
+
 ```mermaid
 gantt
     title LỘ TRÌNH THỰC HIỆN ĐỒ ÁN OOAD (12 TUẦN)
