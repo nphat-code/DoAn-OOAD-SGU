@@ -26,7 +26,7 @@
 | **Tuần 9** | Xây dựng khung kiến trúc phần mềm & CSDL thực tế | CSDL chạy trên SQL Server/MySQL, Backend Core |
 | **Tuần 10**| Lập trình chức năng đặt sân, vận hành lễ tân & POS | Các màn hình nghiệp vụ chính hoạt động được |
 | **Tuần 11**| Hoàn thiện báo cáo, Poster A4, Thử nghiệm kịch bản live-code | File báo cáo hoàn chỉnh, Source code sạch, Poster A4 |
-| **Tuần 12**| **Báo cáo vấn đáp đồ án & Nộp toàn bộ sản phẩm** | **Demo chương trình trên laptop & Nộp báo cáo cuối kỳ** |
+| **Tuần 12**| **Vấn đáp đồ án & Nộp toàn bộ sản phẩm** | **Demo phần mềm trên laptop & Trả lời vấn đáp trực tiếp** |
 
 ---
 
@@ -43,7 +43,7 @@ Do đồ án được thực hiện độc lập bởi **01 sinh viên**, ngư�
 | **Thiết kế Giao diện & Biến cố** | UI/UX Designer | Thiết kế Prototype/Mockup trực quan, lập bảng mô tả biến cố tương tác (Events) chi tiết |
 | **Lập trình & Phát triển phần mềm** | Fullstack Developer | Cài đặt CSDL, lập trình Backend API/Business Logic & Frontend UI hoàn thiện các ca sử dụng |
 | **Kiểm thử & Đóng gói sản phẩm** | QA / QC Engineer | Viết kịch bản kiểm thử, test các trường hợp biên, chuẩn bị môi trường và dữ liệu mẫu |
-| **Vấn đáp & Báo cáo tại D401** | Presenter / Technical Lead | Tự tin thuyết trình, demo phần mềm trôi chảy và sẵn sàng live-code theo yêu cầu của hội đồng |
+| **Vấn đáp đồ án & Bảo vệ cuối kỳ** | Fullstack Developer / Author | Tự tin demo phần mềm trực tiếp, trả lời câu hỏi vấn đáp và sẵn sàng live-code theo yêu cầu của giảng viên |
 
 ---
 
