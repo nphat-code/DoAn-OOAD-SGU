@@ -104,6 +104,9 @@ Do đồ án được thực hiện độc lập bởi **01 sinh viên**, ngư�
 
 ### BẢNG KHẢO SÁT NHÓM B: DÀNH CHO CHỦ SÂN, QUẢN LÝ VÀ NHÂN VIÊN LỄ TÂN
 
+> 🔗 **Link biểu mẫu khảo sát trực tuyến (Jotform):**  
+> 👉 [https://form.jotform.com/262521007302037](https://form.jotform.com/262521007302037)
+
 #### Phần 1: Thông tin quy mô cơ sở
 * **Câu 1:** Quy mô cụm sân của bạn hiện tại:
   - ( ) Dưới 4 sân
