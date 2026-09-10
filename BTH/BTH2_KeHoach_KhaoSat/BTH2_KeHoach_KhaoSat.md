@@ -57,6 +57,9 @@ Do đồ án được thực hiện độc lập bởi **01 sinh viên**, ngư�
 
 ### BẢNG KHẢO SÁT NHÓM A: DÀNH CHO KHÁCH HÀNG & NGƯỜI CHƠI THỂ THAO
 
+> 🔗 **Link biểu mẫu khảo sát trực tuyến (Jotform):**  
+> 👉 [https://form.jotform.com/262521208556051](https://form.jotform.com/262521208556051)
+
 #### Phần 1: Thông tin chung
 * **Câu 1:** Bạn thường chơi môn thể thao nào? *(Chọn nhiều lựa chọn)*
   - [ ] Cầu lông

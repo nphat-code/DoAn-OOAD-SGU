@@ -41,4 +41,8 @@ CÔNG NGHỆ DỰ KIẾN:
 - Ngôn ngữ & Nền tảng: C# .NET / Java (Spring Boot) / Node.js (NestJS) + Frontend Web/App
 - Cơ sở dữ liệu: Microsoft SQL Server / MySQL
 - Công cụ thiết kế: StarUML, Lucidchart, Draw.io
+
+--------------------------------------------------------------------------------
+LIÊN KẾT KHẢO SÁT THỰC TẾ (BTH2):
+- Khảo sát Khách hàng & Người chơi thể thao: https://form.jotform.com/262521208556051
 ================================================================================
