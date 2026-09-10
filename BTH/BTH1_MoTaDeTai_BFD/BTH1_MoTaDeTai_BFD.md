@@ -159,54 +159,9 @@ HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN
 
 ---
 
-### 2.2. Sơ đồ BFD trực quan (Mermaid Diagram)
+### 2.2. Sơ đồ BFD trực quan (Business Function Diagram)
 
-Dưới đây là mã sơ đồ Mermaid để xem trực tiếp hoặc nhúng vào báo cáo (Đồng bộ 100% với cây phân rã chức năng):
-
-```mermaid
-graph TD
-    Root["HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN"]
-
-    Root --> F1["1.0 QUẢN LÝ DANH MỤC VÀ CẤU HÌNH"]
-    Root --> F2["2.0 QUẢN LÝ ĐẶT SÂN VÀ LỊCH THI ĐẤU"]
-    Root --> F3["3.0 QUẢN LÝ VẬN HÀNH TẠI SÂN"]
-    Root --> F4["4.0 QUẢN LÝ KHO VÀ TÀI SẢN"]
-    Root --> F5["5.0 QUẢN LÝ KHÁCH HÀNG VÀ BÁO CÁO"]
-
-    %% 1.0
-    F1 --> F11["1.1 Quản lý danh mục sân"]
-    F1 --> F12["1.2 Quản lý loại sân"]
-    F1 --> F13["1.3 Cấu hình bảng giá theo khung giờ"]
-    F1 --> F14["1.4 Cấu hình phụ thu và chính sách hoàn cọc"]
-
-    %% 2.0
-    F2 --> F21["2.1 Tra cứu lịch sân trống"]
-    F2 --> F22["2.2 Đặt sân theo lượt"]
-    F2 --> F23["2.3 Đặt lịch sân cố định theo tháng"]
-    F2 --> F24["2.4 Hủy đặt sân và xử lý hoàn cọc"]
-    F2 --> F25["2.5 Điều chỉnh lịch đặt sân"]
-
-    %% 3.0
-    F3 --> F31["3.1 Tiếp nhận khách và check-in"]
-    F3 --> F32["3.2 Quản lý cho thuê dụng cụ"]
-    F3 --> F33["3.3 Bán lẻ nước giải khát và phụ kiện"]
-    F3 --> F34["3.4 Theo dõi thời lượng và cảnh báo quá giờ"]
-    F3 --> F35["3.5 Lập hóa đơn và thanh toán"]
-
-    %% 4.0
-    F4 --> F41["4.1 Quản lý danh mục hàng hóa"]
-    F4 --> F42["4.2 Lập phiếu nhập kho"]
-    F4 --> F43["4.3 Quản lý tài sản dụng cụ cho thuê"]
-    F4 --> F44["4.4 Ghi nhận hư hỏng và đền bù"]
-    F4 --> F45["4.5 Cảnh báo tồn kho an toàn"]
-
-    %% 5.0
-    F5 --> F51["5.1 Quản lý khách hàng và thẻ hội viên"]
-    F5 --> F52["5.2 Quản lý khuyến mãi và voucher"]
-    F5 --> F53["5.3 Báo cáo doanh thu"]
-    F5 --> F54["5.4 Báo cáo tỷ lệ lấp đầy sân"]
-    F5 --> F55["5.5 Quản trị hệ thống và phân quyền"]
-```
+![Sơ đồ phân rã chức năng BFD](./SoDoBFD.png)
 
 ---
 
