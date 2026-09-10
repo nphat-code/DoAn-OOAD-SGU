@@ -34,7 +34,7 @@ DoAn-OOAD/
 ├── BaoCao/                                # Báo cáo tiến độ và báo cáo tổng hợp
 ├── BTH/                                   # Tài liệu chi tiết 8 bài thực hành
 │   ├── BTH1_MoTaDeTai_BFD/                # [DONE] Mô tả nghiệp vụ & Sơ đồ BFD
-│   ├── BTH2_KeHoach_KhaoSat/              # [DONE] Kế hoạch 15 tuần & Khảo sát Jotform
+│   ├── BTH2_KeHoach_KhaoSat/              # [DONE] Kế hoạch 12 tuần & Khảo sát Jotform
 │   ├── BTH3_UsecaseDiagram/               # Sơ đồ Use Case tổng thể & từng phân hệ
 │   ├── BTH4_DacTaUsecase/                 # Đặc tả chi tiết từng Use Case
 │   ├── BTH5_SequenceDiagram/              # Sơ đồ tuần tự các ca sử dụng chính

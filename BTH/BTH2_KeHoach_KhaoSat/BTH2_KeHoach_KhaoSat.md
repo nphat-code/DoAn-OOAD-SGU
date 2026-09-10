@@ -13,22 +13,28 @@
 gantt
     title LỘ TRÌNH THỰC HIỆN ĐỒ ÁN OOAD (12 TUẦN)
     dateFormat  YYYY-MM-DD
+    axisFormat  Tuần %W
+
     section GĐ 1: Khảo sát & Use Case
     BTH1 - Mô tả đề tài & Vẽ BFD          :done, bth1, 2025-09-01, 7d
     BTH2 - Lập kế hoạch & Khảo sát Jotform:done, bth2, after bth1, 7d
     BTH3 - Thiết kế sơ đồ Use Case        :active, bth3, after bth2, 7d
     BTH4 - Viết đặc tả Use Case chi tiết  :bth4, after bth3, 7d
     Nộp báo cáo tiến độ GĐ 1 (BTH1-4)     :milestone, m1, after bth4, 0d
+
     section GĐ 2: Thiết kế Đối tượng & CSDL
     BTH5 - Thiết kế sơ đồ Sequence        :bth5, after bth4, 7d
     BTH6 - Thiết kế sơ đồ lớp (Class)     :bth6, after bth5, 7d
     BTH7 - Thiết kế CSDL (RDM 3NF)        :bth7, after bth6, 7d
     BTH8 - Thiết kế UI & Bảng biến cố     :bth8, after bth7, 7d
     Nộp báo cáo tiến độ GĐ 2 (BTH5-8)     :milestone, m2, after bth8, 0d
+
     section GĐ 3: Cài đặt & Vấn đáp
-    Lập trình Source code & CSDL          :dev, 2025-10-13, 28d
-    Đóng gói bài nộp & Hoàn thiện báo cáo :doc, after bth8, 7d
+    Cài đặt 1 - Dựng khung phần mềm & DB  :dev1, after bth8, 7d
+    Cài đặt 2 - Lập trình chức năng chính :dev2, after dev1, 7d
+    Đóng gói bài nộp & Hoàn thiện báo cáo :doc, after dev2, 7d
     Báo cáo vấn đáp đồ án tại phòng D401  :crit, defense, after doc, 7d
+    Bảo vệ thành công                     :milestone, m3, after defense, 0d
 ```
 
 ### 1.2. Bảng phân bổ chi tiết công việc 12 tuần
@@ -50,25 +56,20 @@ gantt
 
 ---
 
-### 1.3. Ma trận phân công trách nhiệm (RACI Matrix)
+### 1.3. Bảng phân định trách nhiệm & Vai trò đảm nhiệm (Đồ án cá nhân)
 
-* **R (Responsible)**: Người trực tiếp thực hiện chính
-* **A (Accountable)**: Người chịu trách nhiệm phê duyệt / kiểm tra
-* **C (Consulted)**: Người được tham vấn ý kiến
-* **I (Informed)**: Người được thông báo kết quả
+Do đồ án được thực hiện độc lập bởi **01 sinh viên**, người thực hiện sẽ đảm nhiệm toàn diện các vai trò trong vòng đời phát triển phần mềm (SDLC):
 
-| Nhiệm vụ / Hạng mục | TV1 (Trưởng nhóm) | TV2 (Lễ tân/Sân) | TV3 (Kho/Dịch vụ) | TV4 (Thanh toán/CSDL) | TV5 (Báo cáo/Admin) |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| **BTH1: Mô tả & BFD** | **A / R** | R | R | R | R |
-| **BTH2: Kế hoạch & Khảo sát** | **A / R** | R | C | C | R |
-| **BTH3: Sơ đồ Use Case** | **A / R** | R (Module Lễ tân) | R (Module Kho) | R (Module TT) | R (Module Admin) |
-| **BTH4: Đặc tả Use Case** | **A** | R (Module Lễ tân) | R (Module Kho) | R (Module TT) | R (Module Admin) |
-| **BTH5: Sequence Diagram** | **A** | R (Luồng Check-in) | R (Luồng Thuê đồ) | R (Luồng Thanh toán) | R (Luồng Cấu hình giá) |
-| **BTH6: Class Diagram** | **A / R** | R | R | R | R |
-| **BTH7: Thiết kế CSDL (RDM)** | C | C | C | **A / R** | R |
-| **BTH8: Thiết kế UI & Events** | **A** | R (UI Lễ tân) | R (UI Kho/Dịch vụ)| R (UI Booking/Bill) | R (UI Dashboard) |
-| **Lập trình Source code** | Backend Core | Frontend Lễ tân | Frontend Kho | Backend Payment | Frontend Admin/Report |
-| **Vấn đáp & Live Code** | Phối hợp | Phối hợp | Phối hợp | Phối hợp | Phối hợp |
+| Nhóm nhiệm vụ / Giai đoạn | Vai trò kỹ thuật đảm nhiệm | Mục tiêu & Cam kết chất lượng |
+| :--- | :--- | :--- |
+| **BTH1 & BTH2: Khảo sát & Kế hoạch** | Business Analyst (BA) / Project Manager | Khảo sát nhu cầu thực tế bằng Jotform, phân rã BFD rõ ràng, lập tiến độ 12 tuần khả thi |
+| **BTH3 & BTH4: Mô hình hóa Use Case** | System Analyst (SA) | Xác định đủ tác nhân (Actor), phân rã Use Case theo từng phân hệ, viết kịch bản đặc tả chuẩn |
+| **BTH5 & BTH6: Thiết kế Hướng đối tượng** | Software Architect | Xây dựng Sequence Diagram chuẩn thông điệp, thiết kế Class Diagram đảm bảo tính kế thừa, đa hình |
+| **BTH7: Thiết kế Cơ sở dữ liệu** | Database Designer (DBA) | Chuẩn hóa lược đồ quan hệ đạt chuẩn 3NF, thiết lập đầy đủ khóa chính/ngoại, ràng buộc toàn vẹn |
+| **BTH8: Thiết kế Giao diện & Biến cố** | UI/UX Designer | Thiết kế Prototype/Mockup trực quan, lập bảng mô tả biến cố tương tác (Events) chi tiết |
+| **Cài đặt 1 & 2: Lập trình phát triển** | Fullstack Developer | Cài đặt CSDL, lập trình Backend API/Business Logic & Frontend UI hoàn thiện các ca sử dụng |
+| **Đóng gói & Kiểm thử (Testing)** | QA / QC Engineer | Viết kịch bản kiểm thử, test các trường hợp biên, chuẩn bị môi trường và dữ liệu mẫu |
+| **Vấn đáp & Báo cáo tại D401** | Presenter / Technical Lead | Tự tin thuyết trình, demo phần mềm trôi chảy và sẵn sàng live-code theo yêu cầu của hội đồng |
 
 ---
 
