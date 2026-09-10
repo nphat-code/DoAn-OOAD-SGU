@@ -15,44 +15,42 @@ gantt
     dateFormat  YYYY-MM-DD
     axisFormat  Tuần %W
 
-    section GĐ 1: Khảo sát & Use Case
+    section GĐ 1: Phân tích yêu cầu
     Mô tả đề tài & Vẽ sơ đồ BFD           :done, t1, 2025-09-01, 7d
     Lập kế hoạch dự án & Khảo sát Jotform :done, t2, after t1, 7d
     Thiết kế sơ đồ Use Case               :active, t3, after t2, 7d
     Viết hồ sơ đặc tả Use Case chi tiết   :t4, after t3, 7d
-    Nộp báo cáo tiến độ Giai đoạn 1       :milestone, m1, after t4, 0d
 
-    section GĐ 2: Thiết kế Đối tượng & CSDL
+    section GĐ 2: Thiết kế hệ thống
     Thiết kế sơ đồ tuần tự (Sequence)     :t5, after t4, 7d
     Thiết kế sơ đồ lớp (Class Diagram)    :t6, after t5, 7d
     Thiết kế CSDL quan hệ (RDM 3NF)       :t7, after t6, 7d
     Thiết kế Giao diện UI & Bảng biến cố  :t8, after t7, 7d
-    Nộp báo cáo tiến độ Giai đoạn 2       :milestone, m2, after t8, 0d
 
-    section GĐ 3: Cài đặt & Vấn đáp
+    section GĐ 3: Cài đặt & Nghiệm thu
     Xây dựng khung phần mềm & Cài đặt DB  :t9, after t8, 7d
     Lập trình các chức năng chính & POS   :t10, after t9, 7d
     Kiểm thử, đóng gói & Viết báo cáo     :t11, after t10, 7d
     Báo cáo vấn đáp đồ án tại phòng D401  :crit, t12, after t11, 7d
-    Bảo vệ thành công                     :milestone, m3, after t12, 0d
+    Nộp Báo cáo hoàn chỉnh & Vấn đáp      :milestone, m_end, after t12, 0d
 ```
 
 ### 1.2. Bảng phân bổ chi tiết công việc 12 tuần
 
-| Tuần | Hạng mục công việc | Sản phẩm đầu ra (Deliverables) | Mốc đánh giá |
-| :---: | :--- | :--- | :---: |
-| **Tuần 1** | Viết mô tả đề tài & Vẽ mô hình phân rã chức năng BFD | Bản mô tả nghiệp vụ, Sơ đồ BFD chuẩn | Khởi động |
-| **Tuần 2** | Lập kế hoạch 12 tuần & Bảng câu hỏi khảo sát Jotform | Kế hoạch Gantt, Link khảo sát người chơi/chủ sân | Khảo sát |
-| **Tuần 3** | Xác định Actor & Thiết kế sơ đồ Use Case tổng thể/chi tiết | Sơ đồ Use Case Diagram hoàn chỉnh | Phân tích |
-| **Tuần 4** | Viết hồ sơ đặc tả Use Case chi tiết cho từng chức năng | Tài liệu đặc tả Use Case chuẩn | **Nộp Báo cáo GĐ 1** |
-| **Tuần 5** | Thiết kế sơ đồ tuần tự (Sequence Diagram) các ca chính | Sơ đồ Sequence Diagram (Check-in, Thuê đồ, Đặt sân) | Thiết kế |
-| **Tuần 6** | Thiết kế sơ đồ lớp đối tượng (Class Diagram) & Bảng mô tả | Sơ đồ lớp, Bảng mô tả chi tiết thuộc tính & phương thức | Thiết kế |
-| **Tuần 7** | Thiết kế Cơ sở dữ liệu quan hệ (RDM) chuẩn 3NF | Lược đồ CSDL quan hệ, Bảng từ điển dữ liệu (Data Dict) | Thiết kế |
-| **Tuần 8** | Thiết kế Giao diện (Mockup UI) & Bảng mô tả biến cố | Bản thiết kế màn hình, Bảng mô tả UI & Biến cố Event | **Nộp Báo cáo GĐ 2** |
-| **Tuần 9** | Xây dựng khung kiến trúc phần mềm & CSDL thực tế | CSDL chạy trên SQL Server/MySQL, Backend Core | Lập trình |
-| **Tuần 10**| Lập trình chức năng đặt sân, vận hành lễ tân & POS | Các màn hình nghiệp vụ chính hoạt động được | Lập trình |
-| **Tuần 11**| Hoàn thiện báo cáo, Poster A4, Thử nghiệm kịch bản live-code | File báo cáo hoàn chỉnh, Source code sạch, Poster A4 | Đóng gói |
-| **Tuần 12**| Báo cáo đồ án & Vấn đáp trực tiếp trước hội đồng SGU | Demo chương trình trên laptop & Trả lời vấn đáp | **BẢO VỆ CUỐI KỲ** |
+| Tuần | Hạng mục công việc | Sản phẩm đầu ra (Deliverables) |
+| :---: | :--- | :--- |
+| **Tuần 1** | Viết mô tả đề tài & Vẽ mô hình phân rã chức năng BFD | Bản mô tả nghiệp vụ, Sơ đồ BFD chuẩn |
+| **Tuần 2** | Lập kế hoạch 12 tuần & Bảng câu hỏi khảo sát Jotform | Kế hoạch Gantt, Link khảo sát người chơi/chủ sân |
+| **Tuần 3** | Xác định Actor & Thiết kế sơ đồ Use Case tổng thể/chi tiết | Sơ đồ Use Case Diagram hoàn chỉnh |
+| **Tuần 4** | Viết hồ sơ đặc tả Use Case chi tiết cho từng chức năng | Tài liệu đặc tả Use Case chuẩn |
+| **Tuần 5** | Thiết kế sơ đồ tuần tự (Sequence Diagram) các ca chính | Sơ đồ Sequence Diagram (Check-in, Thuê đồ, Đặt sân) |
+| **Tuần 6** | Thiết kế sơ đồ lớp đối tượng (Class Diagram) & Bảng mô tả | Sơ đồ lớp, Bảng mô tả chi tiết thuộc tính & phương thức |
+| **Tuần 7** | Thiết kế Cơ sở dữ liệu quan hệ (RDM) chuẩn 3NF | Lược đồ CSDL quan hệ, Bảng từ điển dữ liệu (Data Dict) |
+| **Tuần 8** | Thiết kế Giao diện (Mockup UI) & Bảng mô tả biến cố | Bản thiết kế màn hình, Bảng mô tả UI & Biến cố Event |
+| **Tuần 9** | Xây dựng khung kiến trúc phần mềm & CSDL thực tế | CSDL chạy trên SQL Server/MySQL, Backend Core |
+| **Tuần 10**| Lập trình chức năng đặt sân, vận hành lễ tân & POS | Các màn hình nghiệp vụ chính hoạt động được |
+| **Tuần 11**| Hoàn thiện báo cáo, Poster A4, Thử nghiệm kịch bản live-code | File báo cáo hoàn chỉnh, Source code sạch, Poster A4 |
+| **Tuần 12**| **Báo cáo vấn đáp đồ án & Nộp toàn bộ sản phẩm** | **Demo chương trình trên laptop & Nộp báo cáo cuối kỳ** |
 
 ---
 
