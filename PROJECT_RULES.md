@@ -62,3 +62,18 @@ DoAn-OOAD/
 * **Chiến lược Vấn đáp & Live Coding**:
   * Mã nguồn phân tầng rõ ràng (Presentation -> Business/Service -> Data Access / Repository).
   * Đảm bảo tính mở rộng cao để khi Thầy/Cô yêu cầu sửa trực tiếp chức năng trong phòng thi (thêm loại sân, đổi chính sách phụ phí, bổ sung thuộc tính) thì có thể sửa và demo chạy ngay trong 2-3 phút.
+
+---
+
+## 5. NGUYÊN TẮC THỐNG NHẤT XUYÊN SUỐT (TRACEABILITY MATRIX TỪ BTH1 - BTH8)
+Tuyệt đối không để xảy ra tình trạng "bài này một chức năng, bài kia lại chức năng khác". Toàn bộ 8 bài thực hành phải tuân thủ nghiêm ngặt ma trận ánh xạ 1 - 1:
+
+1. **Bộ Actor cố định**:
+   * Khách vãng lai (`Guest`), Khách thành viên (`Member Customer`), Lễ tân/Thu ngân (`Receptionist`), Thủ kho (`Inventory Staff`), Quản trị/Chủ sân (`Manager/Admin`), Cổng thanh toán (`Payment Gateway`), Dịch vụ SMS/Email.
+2. **Vòng đời trạng thái sân (Court Lifecycle)**:
+   * `Available` $\rightarrow$ `Booked` (Khóa tạm 10p / Đã cọc 30%) $\rightarrow$ `Occupied` (Check-in QR) $\rightarrow$ `Maintenance`.
+3. **Công thức Hóa đơn tổng hợp (Composite Invoice)**:
+   $$\text{Tổng tiền} = \text{Tiền sân} + \text{Phụ phí quá giờ} + \text{Tiền thuê dụng cụ} + \text{Tiền nước/phụ kiện} - \text{Tiền cọc} - \text{Voucher}$$
+4. **Ánh xạ 1 - 1 giữa các bài thực hành**:
+   * **BTH1 (BFD 5 phân hệ)** $\rightarrow$ **BTH3 (Use Case)** $\rightarrow$ **BTH4 (Đặc tả)** $\rightarrow$ **BTH5 (Sequence)** $\rightarrow$ **BTH6 (Class Diagram)** $\rightarrow$ **BTH7 (CSDL 3NF)** $\rightarrow$ **BTH8 (Giao diện UI & Events)** $\rightarrow$ **Source Code**. Mọi danh từ, động từ, thực thể, nghiệp vụ phải đồng bộ 100%.
+
