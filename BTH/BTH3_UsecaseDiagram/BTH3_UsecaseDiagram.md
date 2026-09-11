@@ -25,7 +25,7 @@ flowchart TD
         NotifyGW["📱 Hệ thống SMS / Email Gateway<br>(Twilio / SendGrid / Firebase)"]
     end
 
-    Guest <|-- Customer
+    Customer -->|Kế thừa| Guest
 ```
 
 ### Bảng mô tả chi tiết vai trò của các Tác nhân:
@@ -127,16 +127,16 @@ flowchart LR
     Admin --- UC13
     Admin --- UC14
 
-    UC11 <|-- UC111
-    UC11 <|-- UC112
-    UC11 <|-- UC113
+    UC111 -->|Kế thừa| UC11
+    UC112 -->|Kế thừa| UC11
+    UC113 -->|Kế thừa| UC11
 
-    UC13 <|-- UC131
-    UC13 <|-- UC132
+    UC131 -->|Kế thừa| UC13
+    UC132 -->|Kế thừa| UC13
 
-    UC14 <|-- UC141
-    UC14 <|-- UC142
-    UC14 <|-- UC143
+    UC141 -->|Kế thừa| UC14
+    UC142 -->|Kế thừa| UC14
+    UC143 -->|Kế thừa| UC14
 ```
 
 ---
@@ -222,8 +222,8 @@ flowchart LR
     Staff --- UC34
     Staff --- UC35
 
-    UC31 <|-- UC311
-    UC31 <|-- UC312
+    UC311 -->|Kế thừa| UC31
+    UC312 -->|Kế thừa| UC31
 
     UC32 -.->|<<include>>| UC321
     UC32 -.->|<<include>>| UC322
@@ -304,12 +304,12 @@ flowchart LR
     Admin --- UC54
     Admin --- UC55
 
-    UC51 <|-- UC511
-    UC51 <|-- UC512
+    UC511 -->|Kế thừa| UC51
+    UC512 -->|Kế thừa| UC51
 
-    UC53 <|-- UC531
-    UC53 <|-- UC532
-    UC53 <|-- UC533
+    UC531 -->|Kế thừa| UC53
+    UC532 -->|Kế thừa| UC53
+    UC533 -->|Kế thừa| UC53
 ```
 
 ---
