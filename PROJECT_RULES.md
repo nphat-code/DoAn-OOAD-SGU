@@ -77,3 +77,29 @@ Tuyệt đối không để xảy ra tình trạng "bài này một chức năng
 4. **Ánh xạ 1 - 1 giữa các bài thực hành**:
    * **BTH1 (BFD 5 phân hệ)** $\rightarrow$ **BTH3 (Use Case)** $\rightarrow$ **BTH4 (Đặc tả)** $\rightarrow$ **BTH5 (Sequence)** $\rightarrow$ **BTH6 (Class Diagram)** $\rightarrow$ **BTH7 (CSDL 3NF)** $\rightarrow$ **BTH8 (Giao diện UI & Events)** $\rightarrow$ **Source Code**. Mọi danh từ, động từ, thực thể, nghiệp vụ phải đồng bộ 100%.
 
+---
+
+## 6. QUY CHUẨN THIẾT KẾ SƠ ĐỒ USE CASE & NGUYÊN TẮC HỌC THUẬT UML (BTH3 & BTH4)
+Để đảm bảo đạt điểm tối đa khi chấm bài và vấn đáp trực tiếp với Thầy/Cô bộ môn, toàn bộ thành viên và AI Assistant phải tuân thủ nghiêm ngặt các quy tắc sau:
+
+1. **Đồng nhất từng chữ với BFD (Literal 1:1 Consistency)**:
+   * Tên của **5 Phân hệ lớn** và **25 Use Case con** trong sơ đồ và tài liệu BTH3, BTH4 phải khớp từng chữ cái với cây phân rã BFD (BTH1).
+   * Tuyệt đối không tự ý thêm bớt các từ ngữ phụ thuộc diễn giải cá nhân (Ví dụ: KHÔNG thêm `- POS`, KHÔNG thêm `bảng giá`, KHÔNG thêm `& Dụng cụ`, KHÔNG thêm `(Occupancy Rate)`).
+
+2. **Quy tắc Ranh giới Hệ thống (System Boundary Rule)**:
+   * Trong **Sơ đồ Use Case Tổng thể (Phần 2)**, chỉ vẽ **DUY NHẤT 1 Khung lớn (System Boundary)** bao trọn toàn bộ các Use Case cấp cao của hệ thống.
+   * Tên hệ thống (`HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN`) bắt buộc đặt ở mép trên cùng (Top-Center hoặc Top-Left).
+   * Tuyệt đối không vẽ mỗi phân hệ/mỗi use case một khung con riêng biệt trong sơ đồ tổng thể.
+
+3. **Quy tắc Kế thừa Tác nhân (Actor Generalization Rule)**:
+   * Mối quan hệ giữa các Actor chỉ có thể là **Kế thừa (Generalization)**: Biểu diễn bằng đường thẳng có **mũi tên đầu tam giác rỗng** chĩa từ Actor con về phía Actor cha (`Khách hàng thành viên` ──▷ `Khách hàng vãng lai`).
+   * **CẤM TUYỆT ĐỐI:** Không ghi chữ `<<extend>>` hay `<<include>>` lên đường nối giữa các Actor (đây là các stereotype chỉ dành riêng cho quan hệ giữa Use Case với Use Case). Trên đường nối kế thừa Actor phải **để trống 100%**.
+
+4. **Quy tắc Tác nhân Ngoại vi (External System Actors)**:
+   * Các hệ thống bên ngoài (`Cổng thanh toán trực tuyến`, `Hệ thống SMS/Email Gateway`) là Tác nhân phụ (Secondary Actors) bắt buộc phải xuất hiện đầy đủ ở cả **Sơ đồ Tổng thể** và **Sơ đồ Phân hệ Đặt sân**.
+
+5. **Quy tắc Thẩm mỹ và Bố cục Sơ đồ (Layout & Readability)**:
+   * Bố cục 2 phía: Nhóm khách hàng & Lễ tân đặt ở bên trái; Nhóm Quản trị viên, Thủ kho và Cổng thanh toán đặt ở bên phải.
+   * Hạn chế tối đa các đường nối cắt chéo nhau (Crossing lines).
+   * Khi bắt buộc phải giao nhau trên Draw.io, phải sử dụng đường gấp khúc vuông góc (`Orthogonal`) và bật tính năng cầu vượt (`Line jumps - Arc`) để sơ đồ rõ ràng, chuyên nghiệp, không bị lỗi "sơ đồ mạng nhện".
+
