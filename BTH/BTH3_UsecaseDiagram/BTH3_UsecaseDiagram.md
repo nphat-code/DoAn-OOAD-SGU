@@ -63,8 +63,8 @@ flowchart LR
     subgraph System ["HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN"]
         UC1(["1.0 Quản lý danh mục và cấu hình"])
         UC2(["2.0 Quản lý đặt sân và lịch thi đấu"])
-        UC3(["3.0 Quản lý vận hành tại sân - POS"])
-        UC4(["4.0 Quản lý kho và tài sản dụng cụ"])
+        UC3(["3.0 Quản lý vận hành tại sân"])
+        UC4(["4.0 Quản lý kho và tài sản"])
         UC5(["5.0 Quản lý khách hàng và báo cáo"])
     end
 
@@ -206,9 +206,9 @@ flowchart LR
         UC322(["UC3.2.2: Kiểm tra hoàn trả dụng cụ"])
         UC323(["UC3.2.3: Ghi nhận bồi thường hư hại dụng cụ"])
 
-        UC33(["UC3.3: Bán lẻ nước giải khát & Phụ kiện"])
-        UC34(["UC3.4: Theo dõi thời lượng & Cảnh báo quá giờ"])
-        UC35(["UC3.5: Lập hóa đơn thanh toán tổng hợp"])
+        UC33(["UC3.3: Bán lẻ nước giải khát và phụ kiện"])
+        UC34(["UC3.4: Theo dõi thời lượng và cảnh báo quá giờ"])
+        UC35(["UC3.5: Lập hóa đơn và thanh toán"])
 
         %% Extends for Invoice
         UC_Overtime(["UC3.5.1: Tính phụ phí quá giờ chơi"])
@@ -247,10 +247,10 @@ flowchart LR
     Admin["👤 Quản trị viên / Chủ sân"]
 
     subgraph Subsystem4 ["PHÂN HỆ 4: QUẢN LÝ KHO VÀ TÀI SẢN"]
-        UC41(["UC4.1: Quản lý danh mục hàng hóa & Dụng cụ"])
+        UC41(["UC4.1: Quản lý danh mục hàng hóa"])
         UC42(["UC4.2: Lập phiếu nhập kho"])
-        UC43(["UC4.3: Quản lý trang thiết bị / Dụng cụ cho thuê"])
-        UC44(["UC4.4: Kiểm kê kho & Ghi nhận hao mòn"])
+        UC43(["UC4.3: Quản lý tài sản dụng cụ cho thuê"])
+        UC44(["UC4.4: Ghi nhận hư hỏng và đền bù"])
         UC45(["UC4.5: Cảnh báo tồn kho an toàn"])
     end
 
@@ -286,13 +286,13 @@ flowchart LR
 
         UC52(["UC5.2: Quản lý chương trình khuyến mãi & Voucher"])
 
-        UC53(["UC5.3: Báo cáo thống kê doanh thu"])
+        UC53(["UC5.3: Báo cáo doanh thu"])
         UC531(["UC5.3.1: Báo cáo doanh thu tiền sân"])
         UC532(["UC5.3.2: Báo cáo doanh thu dịch vụ phụ trợ"])
-        UC533(["UC5.3.3: Báo cáo doanh thu theo ca & Hình thức thanh toán"])
+        UC533(["UC5.3.3: Báo cáo doanh thu theo hình thức thanh toán"])
 
-        UC54(["UC5.4: Báo cáo tỷ lệ lấp đầy sân (Occupancy Rate)"])
-        UC55(["UC5.5: Quản trị tài khoản & Phân quyền nhân viên"])
+        UC54(["UC5.4: Báo cáo tỷ lệ lấp đầy sân"])
+        UC55(["UC5.5: Quản trị hệ thống và phân quyền"])
     end
 
     Customer --- UC512
@@ -369,17 +369,17 @@ Bảng ma trận thể hiện quyền truy cập và thực thi của từng vai
 | **UC3.2** | Cho thuê dụng cụ (Lập phiếu / Trả đồ / Đền bù) | | | **X** | | **X** |
 | **UC3.3** | Bán lẻ nước giải khát & Phụ kiện tại quầy | | | **X** | | **X** |
 | **UC3.4** | Theo dõi thời lượng & Cảnh báo quá giờ | | | **X** | | **X** |
-| **UC3.5** | Lập hóa đơn thanh toán tổng hợp POS | | | **X** | | **X** |
-| **UC4.1** | Quản lý danh mục hàng hóa & Dụng cụ | | | | **X** | **X** |
+| **UC3.5** | Lập hóa đơn và thanh toán | | | **X** | | **X** |
+| **UC4.1** | Quản lý danh mục hàng hóa | | | | **X** | **X** |
 | **UC4.2** | Lập phiếu nhập kho | | | | **X** | **X** |
-| **UC4.3** | Quản lý trang thiết bị & Dụng cụ cho thuê | | | | **X** | **X** |
-| **UC4.4** | Kiểm kê kho & Ghi nhận hao mòn | | | | **X** | **X** |
+| **UC4.3** | Quản lý tài sản dụng cụ cho thuê | | | | **X** | **X** |
+| **UC4.4** | Ghi nhận hư hỏng và đền bù | | | | **X** | **X** |
 | **UC4.5** | Cảnh báo tồn kho an toàn | | | | **X** | **X** |
-| **UC5.1** | Quản lý khách hàng & Thẻ hội viên | | **X** *(Xem điểm)* | **X** *(Tra cứu)* | | **X** *(Toàn quyền)* |
-| **UC5.2** | Quản lý chương trình khuyến mãi & Voucher | | **X** *(Xem)* | **X** *(Áp dụng)* | | **X** *(Tạo mới)* |
-| **UC5.3** | Báo cáo thống kê doanh thu (Sân / Dịch vụ / Ca) | | | **X** *(Theo ca)* | | **X** *(Toàn bộ)* |
-| **UC5.4** | Báo cáo tỷ lệ lấp đầy sân (Occupancy Rate) | | | | | **X** |
-| **UC5.5** | Quản trị tài khoản & Phân quyền người dùng | | | | | **X** |
+| **UC5.1** | Quản lý khách hàng và thẻ hội viên | | **X** *(Xem điểm)* | **X** *(Tra cứu)* | | **X** *(Toàn quyền)* |
+| **UC5.2** | Quản lý khuyến mãi và voucher | | **X** *(Xem)* | **X** *(Áp dụng)* | | **X** *(Tạo mới)* |
+| **UC5.3** | Báo cáo doanh thu (Sân / Dịch vụ / Hình thức thanh toán) | | | **X** *(Theo ca)* | | **X** *(Toàn bộ)* |
+| **UC5.4** | Báo cáo tỷ lệ lấp đầy sân | | | | | **X** |
+| **UC5.5** | Quản trị hệ thống và phân quyền | | | | | **X** |
 
 ---
 
