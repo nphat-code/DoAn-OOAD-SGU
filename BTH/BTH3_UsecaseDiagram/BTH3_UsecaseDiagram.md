@@ -61,7 +61,7 @@ flowchart LR
 
     %% System Boundary bao trùm toàn bộ các Use Case
     subgraph System ["HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN"]
-        UC1(["1.0 Quản lý danh mục và cấu hình bảng giá"])
+        UC1(["1.0 Quản lý danh mục và cấu hình"])
         UC2(["2.0 Quản lý đặt sân và lịch thi đấu"])
         UC3(["3.0 Quản lý vận hành tại sân - POS"])
         UC4(["4.0 Quản lý kho và tài sản dụng cụ"])
@@ -96,7 +96,7 @@ flowchart LR
 
 ---
 
-### 3.1. Phân hệ 1: Quản lý Danh mục và Cấu hình Bảng giá
+### 3.1. Phân hệ 1: Quản lý Danh mục và Cấu hình
 
 Phân hệ này dành riêng cho **Quản trị viên / Chủ sân** nhằm thiết lập toàn bộ quy tắc vận hành và định giá cho cụm sân.
 
