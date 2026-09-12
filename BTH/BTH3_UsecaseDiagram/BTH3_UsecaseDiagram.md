@@ -56,24 +56,24 @@ flowchart LR
     ActorAdmin["👤 Quản trị / Chủ sân"]
 
     %% Packages / Subsystems
-    subgraph Sub1 ["1.0 PHÂN HỆ CẤU HÌNH & BẢNG GIÁ"]
-        UC_Config["Quản lý cấu hình danh mục & Bảng giá"]
+    subgraph Sub1 ["1.0 PHÂN HỆ QUẢN LÝ DANH MỤC VÀ CẤU HÌNH"]
+        UC_Config["Quản lý danh mục và cấu hình bảng giá"]
     end
 
-    subgraph Sub2 ["2.0 PHÂN HỆ ĐẶT SÂN & LỊCH THI ĐẤU"]
-        UC_Booking["Đặt sân trực tuyến & Quản lý lịch"]
+    subgraph Sub2 ["2.0 PHÂN HỆ QUẢN LÝ ĐẶT SÂN VÀ LỊCH THI ĐẤU"]
+        UC_Booking["Quản lý đặt sân và lịch thi đấu"]
     end
 
-    subgraph Sub3 ["3.0 PHÂN HỆ VẬN HÀNH TẠI SÂN (POS)"]
-        UC_POS["Check-in, Dịch vụ phụ trợ & Thanh toán POS"]
+    subgraph Sub3 ["3.0 PHÂN HỆ QUẢN LÝ VẬN HÀNH TẠI SÂN"]
+        UC_POS["Vận hành tại sân, dịch vụ phụ trợ & thanh toán POS"]
     end
 
-    subgraph Sub4 ["4.0 PHÂN HỆ KHO & TÀI SẢN"]
-        UC_Inventory["Quản lý kho hàng hóa & Tài sản dụng cụ"]
+    subgraph Sub4 ["4.0 PHÂN HỆ QUẢN LÝ KHO VÀ TÀI SẢN"]
+        UC_Inventory["Quản lý kho và tài sản dụng cụ"]
     end
 
-    subgraph Sub5 ["5.0 PHÂN HỆ KHÁCH HÀNG & BÁO CÁO"]
-        UC_Report["Hội viên, Báo cáo thống kê & Phân quyền"]
+    subgraph Sub5 ["5.0 PHÂN HỆ QUẢN LÝ KHÁCH HÀNG VÀ BÁO CÁO"]
+        UC_Report["Quản lý khách hàng, hội viên và báo cáo"]
     end
 
     %% Connections
@@ -189,7 +189,7 @@ flowchart LR
 
 ---
 
-### 3.3. Phân hệ 3: Quản lý Vận hành tại sân (POS & Check-in)
+### 3.3. Phân hệ 3: Quản lý Vận hành tại sân
 
 Phân hệ dành cho **Nhân viên Lễ tân / Thu ngân** thao tác trực tiếp tại quầy để đón khách, cung cấp dịch vụ phụ trợ và thu tiền.
 
@@ -197,7 +197,7 @@ Phân hệ dành cho **Nhân viên Lễ tân / Thu ngân** thao tác trực ti�
 flowchart LR
     Staff["👤 Nhân viên Lễ tân / Thu ngân"]
 
-    subgraph Subsystem3 ["PHÂN HỆ 3: QUẢN LÝ VẬN HÀNH TẠI SÂN (POS)"]
+    subgraph Subsystem3 ["PHÂN HỆ 3: QUẢN LÝ VẬN HÀNH TẠI SÂN"]
         UC31(["UC3.1: Tiếp nhận & Check-in"])
         UC311(["UC3.1.1: Quét mã QR xác thực khách đặt trước"])
         UC312(["UC3.1.2: Mở sân trực tiếp cho khách vãng lai"])
@@ -271,7 +271,7 @@ flowchart LR
 
 ---
 
-### 3.5. Phân hệ 5: Quản lý Khách hàng và Báo cáo Thống kê
+### 3.5. Phân hệ 5: Quản lý Khách hàng và Báo cáo
 
 Phân hệ dành cho **Quản trị viên** theo dõi hiệu quả kinh doanh và quản lý người dùng, đồng thời cho phép **Khách hàng** quản lý thông tin hội viên.
 
@@ -280,7 +280,7 @@ flowchart LR
     Customer["👤 Khách thành viên"]
     Admin["👤 Quản trị viên / Chủ sân"]
 
-    subgraph Subsystem5 ["PHÂN HỆ 5: KHÁCH HÀNG, BÁO CÁO & PHÂN QUYỀN"]
+    subgraph Subsystem5 ["PHÂN HỆ 5: QUẢN LÝ KHÁCH HÀNG VÀ BÁO CÁO"]
         UC51(["UC5.1: Quản lý khách hàng & Thẻ hội viên"])
         UC511(["UC5.1.1: Đăng ký / Nâng hạng thẻ hội viên"])
         UC512(["UC5.1.2: Tra cứu điểm tích lũy & Đổi ưu đãi"])
