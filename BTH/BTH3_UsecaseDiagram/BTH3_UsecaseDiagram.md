@@ -59,47 +59,35 @@ flowchart LR
     ActorPayment["💳 Cổng thanh toán trực tuyến<br>(VNPay / MoMo)"]
     ActorNotify["📱 Hệ thống SMS / Email Gateway"]
 
-    %% Packages / Subsystems
-    subgraph Sub1 ["1.0 PHÂN HỆ QUẢN LÝ DANH MỤC VÀ CẤU HÌNH"]
-        UC_Config["Quản lý danh mục và cấu hình bảng giá"]
-    end
-
-    subgraph Sub2 ["2.0 PHÂN HỆ QUẢN LÝ ĐẶT SÂN VÀ LỊCH THI ĐẤU"]
-        UC_Booking["Quản lý đặt sân và lịch thi đấu"]
-    end
-
-    subgraph Sub3 ["3.0 PHÂN HỆ QUẢN LÝ VẬN HÀNH TẠI SÂN"]
-        UC_POS["Vận hành tại sân, dịch vụ phụ trợ & thanh toán POS"]
-    end
-
-    subgraph Sub4 ["4.0 PHÂN HỆ QUẢN LÝ KHO VÀ TÀI SẢN"]
-        UC_Inventory["Quản lý kho và tài sản dụng cụ"]
-    end
-
-    subgraph Sub5 ["5.0 PHÂN HỆ QUẢN LÝ KHÁCH HÀNG VÀ BÁO CÁO"]
-        UC_Report["Quản lý khách hàng, hội viên và báo cáo"]
+    %% System Boundary bao trùm toàn bộ các Use Case
+    subgraph System ["HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN"]
+        UC1(["1.0 Quản lý danh mục và cấu hình bảng giá"])
+        UC2(["2.0 Quản lý đặt sân và lịch thi đấu"])
+        UC3(["3.0 Quản lý vận hành tại sân - POS"])
+        UC4(["4.0 Quản lý kho và tài sản dụng cụ"])
+        UC5(["5.0 Quản lý khách hàng và báo cáo"])
     end
 
     %% Actor Inheritance
     ActorCustomer -->|Kế thừa| ActorGuest
 
-    %% Connections
-    ActorGuest --- UC_Booking
-    ActorCustomer --- UC_Booking
-    ActorCustomer --- UC_Report
+    %% Connections từ Actor vào Use Case
+    ActorGuest --- UC2
+    ActorCustomer --- UC2
+    ActorCustomer --- UC5
 
-    ActorStaff --- UC_Booking
-    ActorStaff --- UC_POS
+    ActorStaff --- UC2
+    ActorStaff --- UC3
 
-    ActorWarehouse --- UC_Inventory
+    ActorWarehouse --- UC4
 
-    ActorAdmin --- UC_Config
-    ActorAdmin --- UC_Report
-    ActorAdmin --- UC_Inventory
+    ActorAdmin --- UC1
+    ActorAdmin --- UC4
+    ActorAdmin --- UC5
 
-    %% External Actors Connections
-    UC_Booking --- ActorPayment
-    UC_Booking --- ActorNotify
+    %% Connections với Hệ thống ngoài
+    UC2 --- ActorPayment
+    UC2 --- ActorNotify
 ```
 
 ---
