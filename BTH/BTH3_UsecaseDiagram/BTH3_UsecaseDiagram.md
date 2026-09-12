@@ -55,6 +55,10 @@ flowchart LR
     ActorWarehouse["👤 Nhân viên Thủ kho"]
     ActorAdmin["👤 Quản trị / Chủ sân"]
 
+    %% External System Actors
+    ActorPayment["💳 Cổng thanh toán trực tuyến<br>(VNPay / MoMo)"]
+    ActorNotify["📱 Hệ thống SMS / Email Gateway"]
+
     %% Packages / Subsystems
     subgraph Sub1 ["1.0 PHÂN HỆ QUẢN LÝ DANH MỤC VÀ CẤU HÌNH"]
         UC_Config["Quản lý danh mục và cấu hình bảng giá"]
@@ -76,19 +80,26 @@ flowchart LR
         UC_Report["Quản lý khách hàng, hội viên và báo cáo"]
     end
 
+    %% Actor Inheritance
+    ActorCustomer -->|Kế thừa| ActorGuest
+
     %% Connections
-    ActorGuest --> UC_Booking
-    ActorCustomer --> UC_Booking
-    ActorCustomer --> UC_Report
+    ActorGuest --- UC_Booking
+    ActorCustomer --- UC_Booking
+    ActorCustomer --- UC_Report
 
-    ActorStaff --> UC_Booking
-    ActorStaff --> UC_POS
+    ActorStaff --- UC_Booking
+    ActorStaff --- UC_POS
 
-    ActorWarehouse --> UC_Inventory
+    ActorWarehouse --- UC_Inventory
 
-    ActorAdmin --> UC_Config
-    ActorAdmin --> UC_Report
-    ActorAdmin --> UC_Inventory
+    ActorAdmin --- UC_Config
+    ActorAdmin --- UC_Report
+    ActorAdmin --- UC_Inventory
+
+    %% External Actors Connections
+    UC_Booking --- ActorPayment
+    UC_Booking --- ActorNotify
 ```
 
 ---
