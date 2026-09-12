@@ -20,9 +20,9 @@ Tài liệu này ghi nhớ toàn bộ các quy tắc, ràng buộc và tiêu chu
 * **Nhánh làm việc chính**: `main`
 * **Remote Repository**: `https://github.com/nphat-code/DoAn-OOAD-SGU.git`
 * **Quy chuẩn hiển thị tiếng Việt**: `core.quotepath = false` (không bị lỗi mã hóa ký tự Unicode).
-* **Quy trình Commit & Push**:
-  * Sau khi hoàn thành hoặc cập nhật một hạng mục công việc (bài thực hành BTHx, tính năng, sơ đồ mới), tự động tạo commit có ý nghĩa theo chuẩn Conventional Commits (ví dụ: `feat(bth3): ...`, `docs(rules): ...`).
-  * Tự động push lên GitHub để đồng bộ tiến độ đám mây.
+* **Quy trình Commit & Push (NGUYÊN TẮC BẮT BUỘC: COMMIT LÀ PHẢI PUSH NGAY LẬP TỨC)**:
+  * Sau khi hoàn thành hoặc cập nhật bất kỳ hạng mục nào (bài thực hành BTHx, sửa lỗi, cập nhật rule, tài liệu), **phải tạo commit chuẩn Conventional Commits** (ví dụ: `feat(bth3): ...`, `docs(rules): ...`).
+  * **NGAY SAU ĐÓ PHẢI CHẠY `git push origin main` NGAY LẬP TỨC**, tuyệt đối không để commit tồn đọng ở máy cục bộ (local) mà chưa đồng bộ lên GitHub. Mọi thao tác commit và push phải đi liền với nhau như một khối thống nhất (Atomic).
 
 ---
 
