@@ -98,6 +98,8 @@ HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN
 │   │   ├── 1.1.2 Cập nhật thông tin sân
 │   │   └── 1.1.3 Chuyển trạng thái sân
 │   ├── 1.2 Quản lý loại sân và môn thể thao
+│   │   ├── 1.2.1 Thiết lập loại sân
+│   │   └── 1.2.2 Thiết lập môn thể thao
 │   ├── 1.3 Cấu hình bảng giá theo khung giờ
 │   │   ├── 1.3.1 Thiết lập giá giờ tiêu chuẩn
 │   │   └── 1.3.2 Thiết lập giá giờ cao điểm

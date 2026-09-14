@@ -111,6 +111,9 @@ flowchart LR
         UC113(["UC1.1.3: Chuyển trạng thái sân"])
 
         UC12(["UC1.2: Quản lý loại sân và môn thể thao"])
+        UC121(["UC1.2.1: Thiết lập loại sân"])
+        UC122(["UC1.2.2: Thiết lập môn thể thao"])
+
         UC13(["UC1.3: Cấu hình bảng giá theo khung giờ"])
         UC131(["UC1.3.1: Thiết lập giá giờ tiêu chuẩn"])
         UC132(["UC1.3.2: Thiết lập giá giờ cao điểm"])
@@ -129,6 +132,9 @@ flowchart LR
     UC111 -->|Kế thừa| UC11
     UC112 -->|Kế thừa| UC11
     UC113 -->|Kế thừa| UC11
+
+    UC121 -->|Kế thừa| UC12
+    UC122 -->|Kế thừa| UC12
 
     UC131 -->|Kế thừa| UC13
     UC132 -->|Kế thừa| UC13
@@ -350,6 +356,7 @@ flowchart LR
   * `Khách hàng thành viên (Member Customer)` **kế thừa** `Khách hàng vãng lai (Guest)`: Kế thừa toàn bộ quyền xem lịch trống, xem giá và được bổ sung thêm quyền đặt chỗ, nạp cọc, tích điểm.
 * **Kế thừa giữa các Use Case:**
   * `UC1.1.1: Thêm sân mới`, `UC1.1.2: Cập nhật thông tin sân`, `UC1.1.3: Chuyển trạng thái sân` kế thừa từ `UC1.1: Quản lý danh mục sân`.
+  * `UC1.2.1: Thiết lập loại sân`, `UC1.2.2: Thiết lập môn thể thao` kế thừa từ `UC1.2: Quản lý loại sân và môn thể thao`.
   * `UC1.3.1: Thiết lập giá giờ tiêu chuẩn`, `UC1.3.2: Thiết lập giá giờ cao điểm` kế thừa từ `UC1.3: Cấu hình bảng giá theo khung giờ`.
   * `UC1.4.1: Cấu hình phụ thu cuối tuần và ngày lễ`, `UC1.4.2: Cấu hình phụ thu quá giờ chơi`, `UC1.4.3: Cấu hình tỷ lệ hoàn cọc` kế thừa từ `UC1.4: Cấu hình phụ thu và chính sách hoàn cọc`.
   * `UC3.1.1: Quét mã QR xác thực khách đặt trước` và `UC3.1.2: Mở sân trực tiếp cho khách vãng lai` kế thừa từ `UC3.1: Tiếp nhận khách và check-in`.
