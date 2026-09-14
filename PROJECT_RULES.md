@@ -77,6 +77,16 @@ Tuyệt đối không để xảy ra tình trạng "bài này một chức năng
 4. **Ánh xạ 1 - 1 giữa các bài thực hành**:
    * **BTH1 (BFD 5 phân hệ)** $\rightarrow$ **BTH3 (Use Case)** $\rightarrow$ **BTH4 (Đặc tả)** $\rightarrow$ **BTH5 (Sequence)** $\rightarrow$ **BTH6 (Class Diagram)** $\rightarrow$ **BTH7 (CSDL 3NF)** $\rightarrow$ **BTH8 (Giao diện UI & Events)** $\rightarrow$ **Source Code**. Mọi danh từ, động từ, thực thể, nghiệp vụ phải đồng bộ 100%.
 
+5. **Nguyên tắc Cập nhật liên đới tức thì (Immediate Cascading Update Rule - BẮT BUỘC)**:
+   * Khi có bất kỳ thay đổi nào (thêm/bớt/đổi tên chức năng, sửa logic, đổi số lượng, sửa sơ đồ) ở một tài liệu hay bài thực hành bất kỳ (ví dụ BTH3 hay BTH1):
+     * **BẮT BUỘC PHẢI QUÉT VÀ CẬP NHẬT ĐỒNG THỜI TẤT CẢ CÁC THÀNH PHẦN LIÊN QUAN** ngay trong cùng một lượt:
+       1. Cây cấu trúc Text và sơ đồ phân rã chức năng BFD trong BTH1.
+       2. Sơ đồ Use Case, bảng quan hệ và nội dung mô tả trong BTH3.
+       3. File Draw.io (`DoAn_OOAD_UseCaseDiagram.drawio` - bao gồm các tab Use Case và tab BFD).
+       4. Toàn bộ các bài thực hành kế tiếp (BTH4 Đặc tả, BTH5 Tuần tự, BTH6 Lớp, BTH7 CSDL, BTH8 Giao diện).
+       5. Quy tắc vận hành trong `PROJECT_RULES.md`.
+     * **TUYỆT ĐỐI KHÔNG**: Chỉ sửa cục bộ ở một tài liệu mà bỏ sót các tài liệu liên quan, gây ra mâu thuẫn hay lệch pha giữa các bước phân tích thiết kế.
+
 ---
 
 ## 6. QUY CHUẨN THIẾT KẾ SƠ ĐỒ USE CASE & NGUYÊN TẮC HỌC THUẬT UML (BTH3 & BTH4)
