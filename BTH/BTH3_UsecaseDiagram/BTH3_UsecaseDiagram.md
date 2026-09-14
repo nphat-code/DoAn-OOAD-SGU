@@ -271,7 +271,7 @@ flowchart LR
     Admin --- UC45
 
     UC42 -.->|<<include>>| UC41
-    UC44 -.->|<<extend>>| UC45
+    UC45 -.->|<<extend>>| UC44
 ```
 
 ---
@@ -346,7 +346,7 @@ flowchart LR
 | **UC3.5: Lập hóa đơn và thanh toán** | `UC3.5.1: Tính phụ phí quá giờ chơi` | `At_Overtime_Calculation` | Khi thời gian khách trả sân vượt quá 15 phút so với giờ kết thúc đăng ký ban đầu. |
 | **UC3.5: Lập hóa đơn và thanh toán** | `UC3.5.2: Áp dụng ưu đãi và voucher` | `At_Discount_Application` | Khi khách hàng xuất trình mã Voucher hợp lệ hoặc là Hội viên đạt hạng VIP/Gold. |
 | **UC3.2.2: Kiểm tra hoàn trả dụng cụ** | `UC3.2.3: Ghi nhận bồi thường hư hại dụng cụ` | `At_Equipment_Damage_Check` | Khi nhân viên phát hiện vợt bị gãy cán, nứt khung hoặc làm mất bóng thi đấu. |
-| **UC4.5: Cảnh báo tồn kho an toàn** | `UC4.4: Ghi nhận hư hỏng và đền bù` | `At_Stock_Threshold_Check` | Khi ghi nhận hao hụt/hư hại làm lượng tồn kho giảm xuống dưới định mức an toàn quy định. |
+| **UC4.4: Ghi nhận hư hỏng và đền bù** | `UC4.5: Cảnh báo tồn kho an toàn` | `At_Stock_Threshold_Check` | Khi ghi nhận hư hại/hao hụt làm số lượng tồn kho giảm xuống dưới định mức an toàn quy định. |
 
 ---
 
@@ -367,7 +367,7 @@ flowchart LR
 
 ## PHẦN 5: MA TRẬN PHÂN QUYỀN ACTOR - USE CASE (ACCESS CONTROL MATRIX)
 
-Bảng ma trận thể hiện quyền truy cập và thực thi của từng vai trò (Role) đối với toàn bộ 25 Use Case trong hệ thống:
+Bảng ma trận thể hiện quyền truy cập và thực thi của từng vai trò (Role) đối với toàn bộ 24 Use Case chính trong hệ thống:
 
 | Mã UC | Tên Use Case | Khách vãng lai | Khách thành viên | Lễ tân / Thu ngân | Thủ kho | Quản trị / Chủ sân |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: |
@@ -405,4 +405,4 @@ Bảng ma trận thể hiện quyền truy cập và thực thi của từng vai
    * Sử dụng đúng quan hệ `<<include>>` (mũi tên đứt nét trỏ từ UC chính sang UC bắt buộc).
    * Sử dụng đúng quan hệ `<<extend>>` (mũi tên đứt nét trỏ từ UC mở rộng về UC chính kèm Extension Point).
    * Phân biệt rõ ràng Actor chính (Human) và Actor phụ (Hệ thống cổng thanh toán / SMS).
-3. **Tính sẵn sàng cho BTH4 (Đặc tả Use Case):** Danh sách 25 Use Case này là đầu vào trực tiếp để lựa chọn và viết đặc tả chi tiết trong BTH4.
+3. **Tính sẵn sàng cho BTH4 (Đặc tả Use Case):** Danh sách 24 Use Case chính này là đầu vào trực tiếp để lựa chọn và viết đặc tả chi tiết trong BTH4.
