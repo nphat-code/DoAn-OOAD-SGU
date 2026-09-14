@@ -96,46 +96,40 @@ HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN
 │   ├── 1.1 Quản lý danh mục sân
 │   │   ├── 1.1.1 Thêm sân mới
 │   │   ├── 1.1.2 Cập nhật thông tin sân
-│   │   └── 1.1.3 Chuyển trạng thái sân (Hoạt động, Bảo trì, Tạm đóng)
-│   ├── 1.2 Quản lý loại sân
-│   │   ├── 1.2.1 Thiết lập loại sân (Sân đơn, Sân đôi, Sân trong nhà, Sân ngoài trời)
-│   │   └── 1.2.2 Thiết lập môn thể thao (Pickleball, Cầu lông, Futsal)
+│   │   └── 1.1.3 Chuyển trạng thái sân
+│   ├── 1.2 Quản lý loại sân và môn thể thao
 │   ├── 1.3 Cấu hình bảng giá theo khung giờ
-│   │   ├── 1.3.1 Thiết lập giá giờ tiêu chuẩn (Giờ hành chính)
-│   │   └── 1.3.2 Thiết lập giá giờ cao điểm (Peak hours 17h-22h)
+│   │   ├── 1.3.1 Thiết lập giá giờ tiêu chuẩn
+│   │   └── 1.3.2 Thiết lập giá giờ cao điểm
 │   └── 1.4 Cấu hình phụ thu và chính sách hoàn cọc
 │       ├── 1.4.1 Cấu hình phụ thu cuối tuần và ngày lễ
 │       ├── 1.4.2 Cấu hình phụ thu quá giờ chơi
-│       └── 1.4.3 Cấu hình tỷ lệ hoàn cọc theo thời gian hủy
+│       └── 1.4.3 Cấu hình tỷ lệ hoàn cọc
 │
 ├── 2.0 QUẢN LÝ ĐẶT SÂN VÀ LỊCH THI ĐẤU
 │   ├── 2.1 Tra cứu lịch sân trống
 │   ├── 2.2 Đặt sân theo lượt
-│   │   ├── 2.2.1 Chọn sân và khung giờ thi đấu
-│   │   ├── 2.2.2 Khóa slot giữ chỗ tạm thời (10 phút)
-│   │   ├── 2.2.3 Xác nhận đặt và thanh toán tiền cọc
-│   │   └── 2.2.4 Phát hành mã đặt sân và mã QR check-in
+│   │   ├── 2.2.1 Khóa slot giữ chỗ tạm thời
+│   │   ├── 2.2.2 Thanh toán tiền cọc trực tuyến
+│   │   └── 2.2.3 Phát hành mã đặt sân và mã QR
 │   ├── 2.3 Đặt lịch sân cố định theo tháng
-│   │   ├── 2.3.1 Chọn lịch thi đấu định kỳ theo tuần trong tháng
-│   │   ├── 2.3.2 Kiểm tra xung đột lịch và điều phối sân
-│   │   └── 2.3.3 Thiết lập hợp đồng thuê sân định kỳ
+│   │   └── 2.3.1 Quét xung đột và điều phối lịch tháng
 │   ├── 2.4 Hủy đặt sân và xử lý hoàn cọc
 │   └── 2.5 Điều chỉnh lịch đặt sân
 │
 ├── 3.0 QUẢN LÝ VẬN HÀNH TẠI SÂN
 │   ├── 3.1 Tiếp nhận khách và check-in
 │   │   ├── 3.1.1 Quét mã QR xác thực khách đặt trước
-│   │   ├── 3.1.2 Mở sân trực tiếp cho khách tại quầy
-│   │   └── 3.1.3 Chuyển trạng thái sân sang "Đang sử dụng"
+│   │   └── 3.1.2 Mở sân trực tiếp cho khách vãng lai
 │   ├── 3.2 Quản lý cho thuê dụng cụ
-│   │   ├── 3.2.1 Lập phiếu thuê dụng cụ (Vợt, bóng, giày)
-│   │   ├── 3.2.2 Kiểm tra hiện trạng khi khách hoàn trả
-│   │   └── 3.2.3 Ghi nhận phí thuê vào hóa đơn của sân
+│   │   ├── 3.2.1 Lập phiếu thuê dụng cụ
+│   │   ├── 3.2.2 Kiểm tra hoàn trả dụng cụ
+│   │   └── 3.2.3 Ghi nhận bồi thường hư hại dụng cụ
 │   ├── 3.3 Bán lẻ nước giải khát và phụ kiện
 │   ├── 3.4 Theo dõi thời lượng và cảnh báo quá giờ
-│   │   ├── 3.4.1 Cảnh báo sân sắp hết giờ trước 10 phút
-│   │   └── 3.4.2 Tự động tính phụ phí quá giờ khi chơi lố thời gian
 │   └── 3.5 Lập hóa đơn và thanh toán
+│       ├── 3.5.1 Tính phụ phí quá giờ chơi
+│       └── 3.5.2 Áp dụng ưu đãi và voucher
 │
 ├── 4.0 QUẢN LÝ KHO VÀ TÀI SẢN
 │   ├── 4.1 Quản lý danh mục hàng hóa
@@ -146,6 +140,8 @@ HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN
 │
 └── 5.0 QUẢN LÝ KHÁCH HÀNG VÀ BÁO CÁO
     ├── 5.1 Quản lý khách hàng và thẻ hội viên
+    │   ├── 5.1.1 Đăng ký và nâng hạng thẻ hội viên
+    │   └── 5.1.2 Tra cứu điểm tích lũy và đổi ưu đãi
     ├── 5.2 Quản lý khuyến mãi và voucher
     ├── 5.3 Báo cáo doanh thu
     │   ├── 5.3.1 Báo cáo doanh thu tiền sân
@@ -153,8 +149,6 @@ HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN
     │   └── 5.3.3 Báo cáo doanh thu theo hình thức thanh toán
     ├── 5.4 Báo cáo tỷ lệ lấp đầy sân
     └── 5.5 Quản trị hệ thống và phân quyền
-        ├── 5.5.1 Quản lý tài khoản người dùng
-        └── 5.5.2 Phân quyền chức năng theo vai trò
 ```
 
 ---

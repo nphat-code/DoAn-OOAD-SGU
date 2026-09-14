@@ -108,15 +108,15 @@ flowchart LR
         UC11(["UC1.1: Quản lý danh mục sân"])
         UC111(["UC1.1.1: Thêm sân mới"])
         UC112(["UC1.1.2: Cập nhật thông tin sân"])
-        UC113(["UC1.1.3: Chuyển trạng thái sân<br>(Hoạt động / Bảo trì / Tạm khóa)"])
+        UC113(["UC1.1.3: Chuyển trạng thái sân"])
 
-        UC12(["UC1.2: Quản lý loại sân & Môn thể thao"])
+        UC12(["UC1.2: Quản lý loại sân và môn thể thao"])
         UC13(["UC1.3: Cấu hình bảng giá theo khung giờ"])
         UC131(["UC1.3.1: Thiết lập giá giờ tiêu chuẩn"])
-        UC132(["UC1.3.2: Thiết lập giá giờ cao điểm (Peak-hours)"])
+        UC132(["UC1.3.2: Thiết lập giá giờ cao điểm"])
 
         UC14(["UC1.4: Cấu hình phụ thu và chính sách hoàn cọc"])
-        UC141(["UC1.4.1: Cấu hình phụ thu cuối tuần / Ngày lễ"])
+        UC141(["UC1.4.1: Cấu hình phụ thu cuối tuần và ngày lễ"])
         UC142(["UC1.4.2: Cấu hình phụ thu quá giờ chơi"])
         UC143(["UC1.4.3: Cấu hình tỷ lệ hoàn cọc"])
     end
@@ -142,7 +142,7 @@ flowchart LR
 
 ### 3.2. Phân hệ 2: Quản lý Đặt sân và Lịch thi đấu
 
-Đây là phân hệ cốt lõi phục vụ **Khách hàng** đặt chỗ trực tuyến và **Lễ tân** xử lý giữ chỗ. Phân hệ tích hợp cơ chế chống trùng lịch (Lock slot 10 phút) và liên kết với Cổng thanh toán & SMS Gateway.
+Đây là phân hệ cốt lõi phục vụ **Khách hàng** đặt chỗ trực tuyến và **Lễ tân** xử lý giữ chỗ. Phân hệ tích hợp cơ chế chống trùng lịch (Khóa slot giữ chỗ tạm thời) và liên kết với Cổng thanh toán & SMS Gateway.
 
 ```mermaid
 flowchart LR
@@ -152,17 +152,17 @@ flowchart LR
     NotifyGW["📱 SMS/Email Gateway"]
 
     subgraph Subsystem2 ["PHÂN HỆ 2: QUẢN LÝ ĐẶT SÂN VÀ LỊCH THI ĐẤU"]
-        UC21(["UC2.1: Tra cứu lịch sân trống (Timeline Grid)"])
+        UC21(["UC2.1: Tra cứu lịch sân trống"])
         UC22(["UC2.2: Đặt sân theo lượt"])
         UC23(["UC2.3: Đặt lịch sân cố định theo tháng"])
-        UC24(["UC2.4: Hủy đặt sân & Xử lý hoàn cọc"])
+        UC24(["UC2.4: Hủy đặt sân và xử lý hoàn cọc"])
         UC25(["UC2.5: Điều chỉnh lịch đặt sân"])
 
         %% Supporting & Included Use Cases
-        UC_Lock(["UC2.2.1: Khóa slot giữ chỗ tạm thời (10 phút)"])
+        UC_Lock(["UC2.2.1: Khóa slot giữ chỗ tạm thời"])
         UC_Deposit(["UC2.2.2: Thanh toán tiền cọc trực tuyến"])
-        UC_GenQR(["UC2.2.3: Phát hành mã đặt & Mã QR Check-in"])
-        UC_CheckConflict(["UC2.3.1: Quét xung đột & Điều phối lịch tháng"])
+        UC_GenQR(["UC2.2.3: Phát hành mã đặt sân và mã QR"])
+        UC_CheckConflict(["UC2.3.1: Quét xung đột và điều phối lịch tháng"])
     end
 
     Guest --- UC21
@@ -197,12 +197,12 @@ flowchart LR
     Staff["👤 Nhân viên Lễ tân / Thu ngân"]
 
     subgraph Subsystem3 ["PHÂN HỆ 3: QUẢN LÝ VẬN HÀNH TẠI SÂN"]
-        UC31(["UC3.1: Tiếp nhận & Check-in"])
+        UC31(["UC3.1: Tiếp nhận khách và check-in"])
         UC311(["UC3.1.1: Quét mã QR xác thực khách đặt trước"])
         UC312(["UC3.1.2: Mở sân trực tiếp cho khách vãng lai"])
 
         UC32(["UC3.2: Quản lý cho thuê dụng cụ"])
-        UC321(["UC3.2.1: Lập phiếu mượn/thuê dụng cụ (Vợt, bóng)"])
+        UC321(["UC3.2.1: Lập phiếu thuê dụng cụ"])
         UC322(["UC3.2.2: Kiểm tra hoàn trả dụng cụ"])
         UC323(["UC3.2.3: Ghi nhận bồi thường hư hại dụng cụ"])
 
@@ -212,7 +212,7 @@ flowchart LR
 
         %% Extends for Invoice
         UC_Overtime(["UC3.5.1: Tính phụ phí quá giờ chơi"])
-        UC_Voucher(["UC3.5.2: Áp dụng Voucher / Giảm giá hội viên"])
+        UC_Voucher(["UC3.5.2: Áp dụng ưu đãi và voucher"])
     end
 
     Staff --- UC31
@@ -280,11 +280,11 @@ flowchart LR
     Admin["👤 Quản trị viên / Chủ sân"]
 
     subgraph Subsystem5 ["PHÂN HỆ 5: QUẢN LÝ KHÁCH HÀNG VÀ BÁO CÁO"]
-        UC51(["UC5.1: Quản lý khách hàng & Thẻ hội viên"])
-        UC511(["UC5.1.1: Đăng ký / Nâng hạng thẻ hội viên"])
-        UC512(["UC5.1.2: Tra cứu điểm tích lũy & Đổi ưu đãi"])
+        UC51(["UC5.1: Quản lý khách hàng và thẻ hội viên"])
+        UC511(["UC5.1.1: Đăng ký và nâng hạng thẻ hội viên"])
+        UC512(["UC5.1.2: Tra cứu điểm tích lũy và đổi ưu đãi"])
 
-        UC52(["UC5.2: Quản lý chương trình khuyến mãi & Voucher"])
+        UC52(["UC5.2: Quản lý khuyến mãi và voucher"])
 
         UC53(["UC5.3: Báo cáo doanh thu"])
         UC531(["UC5.3.1: Báo cáo doanh thu tiền sân"])
@@ -320,12 +320,16 @@ flowchart LR
 | Base Use Case (UC gốc) | Included Use Case (UC được gọi) | Lý do nghiệp vụ bắt buộc |
 | :--- | :--- | :--- |
 | **UC2.2: Đặt sân theo lượt** | `UC2.1: Tra cứu lịch sân trống` | Khách hàng bắt buộc phải xem lịch trống mới có thể chọn sân và khung giờ phù hợp. |
-| **UC2.2: Đặt sân theo lượt** | `UC2.2.1: Khóa slot giữ chỗ tạm thời` | Khi khách chọn sân, hệ thống lập tức khóa slot trong 10 phút để đảm bảo không ai khác đặt trùng. |
-| **UC2.2: Đặt sân theo lượt** | `UC2.2.2: Thanh toán tiền cọc` | Đơn đặt sân chỉ có hiệu lực khi khách hoàn tất đặt cọc tối thiểu 30% qua cổng thanh toán. |
-| **UC2.2: Đặt sân theo lượt** | `UC2.2.3: Phát hành mã đặt & QR` | Sau khi cọc thành công, hệ thống bắt buộc tạo mã định danh và mã QR để khách check-in tại sân. |
-| **UC2.3: Đặt lịch theo tháng** | `UC2.3.1: Quét xung đột lịch` | Đặt lịch định kỳ bắt buộc phải quét toàn bộ các tuần trong tháng để phát hiện các ngày bị trùng lịch. |
-| **UC3.5: Lập hóa đơn tổng hợp** | `UC3.2: Tiền thuê dụng cụ` *(nếu có)* | Hóa đơn thanh toán khi trả sân phải cộng dồn toàn bộ tiền thuê vợt/bóng chưa thanh toán. |
-| **UC3.5: Lập hóa đơn tổng hợp** | `UC3.3: Tiền nước uống` *(nếu có)* | Hóa đơn thanh toán phải cộng dồn các mặt hàng nước uống/phụ kiện khách đã dùng trong ca chơi. |
+| **UC2.2: Đặt sân theo lượt** | `UC2.2.1: Khóa slot giữ chỗ tạm thời` | Khi khách chọn sân, hệ thống lập tức khóa slot để đảm bảo không ai khác đặt trùng. |
+| **UC2.2: Đặt sân theo lượt** | `UC2.2.2: Thanh toán tiền cọc trực tuyến` | Đơn đặt sân chỉ có hiệu lực khi khách hoàn tất đặt cọc qua cổng thanh toán. |
+| **UC2.2: Đặt sân theo lượt** | `UC2.2.3: Phát hành mã đặt sân và mã QR` | Sau khi cọc thành công, hệ thống bắt buộc tạo mã định danh và mã QR để khách check-in tại sân. |
+| **UC2.3: Đặt lịch sân cố định theo tháng** | `UC2.3.1: Quét xung đột và điều phối lịch tháng` | Đặt lịch định kỳ bắt buộc phải quét toàn bộ các tuần trong tháng để phát hiện các ngày bị trùng lịch. |
+| **UC2.3: Đặt lịch sân cố định theo tháng** | `UC2.2.2: Thanh toán tiền cọc trực tuyến` | Đơn đặt lịch tháng bắt buộc thanh toán tiền cọc định kỳ. |
+| **UC3.2: Quản lý cho thuê dụng cụ** | `UC3.2.1: Lập phiếu thuê dụng cụ` | Khi khách có nhu cầu mượn vợt/bóng phải lập phiếu thuê xác nhận. |
+| **UC3.2: Quản lý cho thuê dụng cụ** | `UC3.2.2: Kiểm tra hoàn trả dụng cụ` | Khi khách trả đồ nhân viên phải kiểm tra hiện trạng thiết bị. |
+| **UC3.5: Lập hóa đơn và thanh toán** | `UC3.2: Quản lý cho thuê dụng cụ` *(nếu có)* | Hóa đơn thanh toán khi trả sân phải cộng dồn toàn bộ tiền thuê vợt/bóng chưa thanh toán. |
+| **UC3.5: Lập hóa đơn và thanh toán** | `UC3.3: Bán lẻ nước giải khát và phụ kiện` *(nếu có)* | Hóa đơn thanh toán phải cộng dồn các mặt hàng nước uống/phụ kiện khách đã dùng trong ca chơi. |
+| **UC4.2: Lập phiếu nhập kho** | `UC4.1: Quản lý danh mục hàng hóa` | Nhập kho bắt buộc phải chọn từ danh mục hàng hóa đã định nghĩa. |
 
 ---
 
@@ -333,10 +337,10 @@ flowchart LR
 
 | Base Use Case (UC gốc) | Extension Use Case (UC mở rộng) | Điểm mở rộng (Extension Point) | Điều kiện kích hoạt mở rộng |
 | :--- | :--- | :--- | :--- |
-| **UC3.5: Lập hóa đơn tổng hợp** | `UC3.5.1: Tính phụ phí quá giờ` | `At_Overtime_Calculation` | Khi thời gian khách trả sân vượt quá 15 phút so với giờ kết thúc đăng ký ban đầu. |
-| **UC3.5: Lập hóa đơn tổng hợp** | `UC3.5.2: Áp dụng Voucher / Ưu đãi`| `At_Discount_Application` | Khi khách hàng xuất trình mã Voucher hợp lệ hoặc là Hội viên đạt hạng VIP/Gold. |
-| **UC3.2.2: Kiểm tra trả dụng cụ**| `UC3.2.3: Ghi nhận đền bù hư hại` | `At_Equipment_Damage_Check` | Khi nhân viên phát hiện vợt bị gãy cán, nứt khung hoặc làm mất bóng thi đấu. |
-| **UC4.4: Kiểm kê kho hàng** | `UC4.5: Cảnh báo tồn kho an toàn` | `At_Stock_Threshold_Check` | Khi số lượng nước uống hoặc phụ kiện trong kho giảm xuống dưới định mức an toàn quy định. |
+| **UC3.5: Lập hóa đơn và thanh toán** | `UC3.5.1: Tính phụ phí quá giờ chơi` | `At_Overtime_Calculation` | Khi thời gian khách trả sân vượt quá 15 phút so với giờ kết thúc đăng ký ban đầu. |
+| **UC3.5: Lập hóa đơn và thanh toán** | `UC3.5.2: Áp dụng ưu đãi và voucher` | `At_Discount_Application` | Khi khách hàng xuất trình mã Voucher hợp lệ hoặc là Hội viên đạt hạng VIP/Gold. |
+| **UC3.2.2: Kiểm tra hoàn trả dụng cụ** | `UC3.2.3: Ghi nhận bồi thường hư hại dụng cụ` | `At_Equipment_Damage_Check` | Khi nhân viên phát hiện vợt bị gãy cán, nứt khung hoặc làm mất bóng thi đấu. |
+| **UC4.5: Cảnh báo tồn kho an toàn** | `UC4.4: Ghi nhận hư hỏng và đền bù` | `At_Stock_Threshold_Check` | Khi ghi nhận hao hụt/hư hại làm lượng tồn kho giảm xuống dưới định mức an toàn quy định. |
 
 ---
 
@@ -345,8 +349,12 @@ flowchart LR
 * **Kế thừa giữa các Actor:**
   * `Khách hàng thành viên (Member Customer)` **kế thừa** `Khách hàng vãng lai (Guest)`: Kế thừa toàn bộ quyền xem lịch trống, xem giá và được bổ sung thêm quyền đặt chỗ, nạp cọc, tích điểm.
 * **Kế thừa giữa các Use Case:**
-  * `UC3.1.1: Quét QR check-in` và `UC3.1.2: Mở sân trực tiếp` là 2 dạng cụ thể hóa kế thừa từ `UC3.1: Tiếp nhận khách`.
-  * `UC5.3.1: Báo cáo doanh thu tiền sân`, `UC5.3.2: Báo cáo doanh thu dịch vụ`, `UC5.3.3: Báo cáo theo ca` kế thừa từ `UC5.3: Báo cáo thống kê doanh thu`.
+  * `UC1.1.1: Thêm sân mới`, `UC1.1.2: Cập nhật thông tin sân`, `UC1.1.3: Chuyển trạng thái sân` kế thừa từ `UC1.1: Quản lý danh mục sân`.
+  * `UC1.3.1: Thiết lập giá giờ tiêu chuẩn`, `UC1.3.2: Thiết lập giá giờ cao điểm` kế thừa từ `UC1.3: Cấu hình bảng giá theo khung giờ`.
+  * `UC1.4.1: Cấu hình phụ thu cuối tuần và ngày lễ`, `UC1.4.2: Cấu hình phụ thu quá giờ chơi`, `UC1.4.3: Cấu hình tỷ lệ hoàn cọc` kế thừa từ `UC1.4: Cấu hình phụ thu và chính sách hoàn cọc`.
+  * `UC3.1.1: Quét mã QR xác thực khách đặt trước` và `UC3.1.2: Mở sân trực tiếp cho khách vãng lai` kế thừa từ `UC3.1: Tiếp nhận khách và check-in`.
+  * `UC5.1.1: Đăng ký và nâng hạng thẻ hội viên`, `UC5.1.2: Tra cứu điểm tích lũy và đổi ưu đãi` kế thừa từ `UC5.1: Quản lý khách hàng và thẻ hội viên`.
+  * `UC5.3.1: Báo cáo doanh thu tiền sân`, `UC5.3.2: Báo cáo doanh thu dịch vụ phụ trợ`, `UC5.3.3: Báo cáo doanh thu theo hình thức thanh toán` kế thừa từ `UC5.3: Báo cáo doanh thu`.
 
 ---
 
@@ -356,19 +364,19 @@ Bảng ma trận thể hiện quyền truy cập và thực thi của từng vai
 
 | Mã UC | Tên Use Case | Khách vãng lai | Khách thành viên | Lễ tân / Thu ngân | Thủ kho | Quản trị / Chủ sân |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: |
-| **UC1.1** | Quản lý danh mục sân (Thêm/Sửa/Đổi trạng thái) | | | | | **X** |
+| **UC1.1** | Quản lý danh mục sân | | | | | **X** |
 | **UC1.2** | Quản lý loại sân và môn thể thao | | | | | **X** |
-| **UC1.3** | Cấu hình bảng giá ma trận theo khung giờ | | | | | **X** |
+| **UC1.3** | Cấu hình bảng giá theo khung giờ | | | | | **X** |
 | **UC1.4** | Cấu hình phụ thu và chính sách hoàn cọc | | | | | **X** |
-| **UC2.1** | Tra cứu lịch sân trống (Timeline Grid) | **X** | **X** | **X** | | **X** |
-| **UC2.2** | Đặt sân theo lượt & Thanh toán cọc | | **X** | **X** | | **X** |
-| **UC2.3** | Đặt lịch sân cố định theo tháng (Subscription) | | **X** | **X** | | **X** |
+| **UC2.1** | Tra cứu lịch sân trống | **X** | **X** | **X** | | **X** |
+| **UC2.2** | Đặt sân theo lượt | | **X** | **X** | | **X** |
+| **UC2.3** | Đặt lịch sân cố định theo tháng | | **X** | **X** | | **X** |
 | **UC2.4** | Hủy đặt sân và xử lý hoàn cọc | | **X** | **X** | | **X** |
-| **UC2.5** | Điều chỉnh / Dời lịch đặt sân | | **X** | **X** | | **X** |
-| **UC3.1** | Tiếp nhận khách & Check-in (Quét QR / Mở sân) | | | **X** | | **X** |
-| **UC3.2** | Cho thuê dụng cụ (Lập phiếu / Trả đồ / Đền bù) | | | **X** | | **X** |
-| **UC3.3** | Bán lẻ nước giải khát & Phụ kiện tại quầy | | | **X** | | **X** |
-| **UC3.4** | Theo dõi thời lượng & Cảnh báo quá giờ | | | **X** | | **X** |
+| **UC2.5** | Điều chỉnh lịch đặt sân | | **X** | **X** | | **X** |
+| **UC3.1** | Tiếp nhận khách và check-in | | | **X** | | **X** |
+| **UC3.2** | Quản lý cho thuê dụng cụ | | | **X** | | **X** |
+| **UC3.3** | Bán lẻ nước giải khát và phụ kiện | | | **X** | | **X** |
+| **UC3.4** | Theo dõi thời lượng và cảnh báo quá giờ | | | **X** | | **X** |
 | **UC3.5** | Lập hóa đơn và thanh toán | | | **X** | | **X** |
 | **UC4.1** | Quản lý danh mục hàng hóa | | | | **X** | **X** |
 | **UC4.2** | Lập phiếu nhập kho | | | | **X** | **X** |
@@ -377,7 +385,7 @@ Bảng ma trận thể hiện quyền truy cập và thực thi của từng vai
 | **UC4.5** | Cảnh báo tồn kho an toàn | | | | **X** | **X** |
 | **UC5.1** | Quản lý khách hàng và thẻ hội viên | | **X** *(Xem điểm)* | **X** *(Tra cứu)* | | **X** *(Toàn quyền)* |
 | **UC5.2** | Quản lý khuyến mãi và voucher | | **X** *(Xem)* | **X** *(Áp dụng)* | | **X** *(Tạo mới)* |
-| **UC5.3** | Báo cáo doanh thu (Sân / Dịch vụ / Hình thức thanh toán) | | | **X** *(Theo ca)* | | **X** *(Toàn bộ)* |
+| **UC5.3** | Báo cáo doanh thu | | | **X** *(Theo ca)* | | **X** *(Toàn bộ)* |
 | **UC5.4** | Báo cáo tỷ lệ lấp đầy sân | | | | | **X** |
 | **UC5.5** | Quản trị hệ thống và phân quyền | | | | | **X** |
 
