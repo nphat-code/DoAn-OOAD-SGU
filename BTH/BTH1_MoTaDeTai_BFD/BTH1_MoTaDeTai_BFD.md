@@ -159,6 +159,100 @@ HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN
 
 ![Sơ đồ phân rã chức năng BFD](./SoDoBFD.png)
 
+```mermaid
+graph TD
+    Root["HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN"]
+
+    Root --> F1["1.0 QUẢN LÝ DANH MỤC VÀ CẤU HÌNH"]
+    Root --> F2["2.0 QUẢN LÝ ĐẶT SÂN VÀ LỊCH THI ĐẤU"]
+    Root --> F3["3.0 QUẢN LÝ VẬN HÀNH TẠI SÂN"]
+    Root --> F4["4.0 QUẢN LÝ KHO VÀ TÀI SẢN"]
+    Root --> F5["5.0 QUẢN LÝ KHÁCH HÀNG VÀ BÁO CÁO"]
+
+    %% 1.0
+    F1 --> F11["1.1 Quản lý danh mục sân"]
+    F11 --> F111["1.1.1 Thêm sân mới"]
+    F11 --> F112["1.1.2 Cập nhật thông tin sân"]
+    F11 --> F113["1.1.3 Chuyển trạng thái sân"]
+
+    F1 --> F12["1.2 Quản lý loại sân và môn thể thao"]
+    F12 --> F121["1.2.1 Thiết lập loại sân"]
+    F12 --> F122["1.2.2 Thiết lập môn thể thao"]
+
+    F1 --> F13["1.3 Cấu hình bảng giá theo khung giờ"]
+    F13 --> F131["1.3.1 Thiết lập giá giờ tiêu chuẩn"]
+    F13 --> F132["1.3.2 Thiết lập giá giờ cao điểm"]
+
+    F1 --> F14["1.4 Cấu hình phụ thu và chính sách hoàn cọc"]
+    F14 --> F141["1.4.1 Cấu hình phụ thu cuối tuần và ngày lễ"]
+    F14 --> F142["1.4.2 Cấu hình phụ thu quá giờ chơi"]
+    F14 --> F143["1.4.3 Cấu hình tỷ lệ hoàn cọc"]
+
+    %% 2.0
+    F2 --> F21["2.1 Tra cứu lịch sân trống"]
+
+    F2 --> F22["2.2 Đặt sân theo lượt"]
+    F22 --> F221["2.2.1 Khóa slot giữ chỗ tạm thời"]
+    F22 --> F222["2.2.2 Thanh toán tiền cọc trực tuyến"]
+    F22 --> F223["2.2.3 Phát hành mã đặt sân và mã QR"]
+
+    F2 --> F23["2.3 Đặt lịch sân cố định theo tháng"]
+    F23 --> F231["2.3.1 Quét xung đột và điều phối lịch tháng"]
+
+    F2 --> F24["2.4 Hủy đặt sân và xử lý hoàn cọc"]
+    F2 --> F25["2.5 Điều chỉnh lịch đặt sân"]
+
+    %% 3.0
+    F3 --> F31["3.1 Tiếp nhận khách và check-in"]
+    F31 --> F311["3.1.1 Quét mã QR xác thực khách đặt trước"]
+    F31 --> F312["3.1.2 Mở sân trực tiếp cho khách vãng lai"]
+
+    F3 --> F32["3.2 Quản lý cho thuê dụng cụ"]
+    F32 --> F321["3.2.1 Lập phiếu thuê dụng cụ"]
+    F32 --> F322["3.2.2 Kiểm tra hoàn trả dụng cụ"]
+    F32 --> F323["3.2.3 Ghi nhận bồi thường hư hại dụng cụ"]
+
+    F3 --> F33["3.3 Bán lẻ nước giải khát và phụ kiện"]
+    F3 --> F34["3.4 Theo dõi thời lượng và cảnh báo quá giờ"]
+
+    F3 --> F35["3.5 Lập hóa đơn và thanh toán"]
+    F35 --> F351["3.5.1 Tính phụ phí quá giờ chơi"]
+    F35 --> F352["3.5.2 Áp dụng ưu đãi và voucher"]
+
+    %% 4.0
+    F4 --> F41["4.1 Quản lý danh mục hàng hóa"]
+    F4 --> F42["4.2 Lập phiếu nhập kho"]
+    F4 --> F43["4.3 Quản lý tài sản dụng cụ cho thuê"]
+    F4 --> F44["4.4 Ghi nhận hư hỏng và đền bù"]
+    F4 --> F45["4.5 Cảnh báo tồn kho an toàn"]
+
+    %% 5.0
+    F5 --> F51["5.1 Quản lý khách hàng và thẻ hội viên"]
+    F51 --> F511["5.1.1 Đăng ký và nâng hạng thẻ hội viên"]
+    F51 --> F512["5.1.2 Tra cứu điểm tích lũy và đổi ưu đãi"]
+
+    F5 --> F52["5.2 Quản lý khuyến mãi và voucher"]
+
+    F5 --> F53["5.3 Báo cáo doanh thu"]
+    F53 --> F531["5.3.1 Báo cáo doanh thu tiền sân"]
+    F53 --> F532["5.3.2 Báo cáo doanh thu dịch vụ phụ trợ"]
+    F53 --> F533["5.3.3 Báo cáo doanh thu theo hình thức thanh toán"]
+
+    F5 --> F54["5.4 Báo cáo tỷ lệ lấp đầy sân"]
+    F5 --> F55["5.5 Quản trị hệ thống và phân quyền"]
+
+    %% Styling
+    classDef root fill:#003366,stroke:#001F3F,stroke-width:2px,color:#fff,font-weight:bold;
+    classDef level1 fill:#0066CC,stroke:#004C99,stroke-width:2px,color:#fff,font-weight:bold;
+    classDef level2 fill:#E6F0FA,stroke:#0066CC,stroke-width:1.5px,color:#003366,font-weight:bold;
+    classDef level3 fill:#FFFFFF,stroke:#888888,stroke-width:1px,color:#333333;
+
+    class Root root;
+    class F1,F2,F3,F4,F5 level1;
+    class F11,F12,F13,F14,F21,F22,F23,F24,F25,F31,F32,F33,F34,F35,F41,F42,F43,F44,F45,F51,F52,F53,F54,F55 level2;
+    class F111,F112,F113,F121,F122,F131,F132,F141,F142,F143,F221,F222,F223,F231,F311,F312,F321,F322,F323,F351,F352,F511,F512,F531,F532,F533 level3;
+```
+
 ---
 
 ## PHẦN 3: ĐỐI CHIẾU TIÊU CHÍ CHẤM ĐIỂM OOAD SGU
