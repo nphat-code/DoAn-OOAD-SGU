@@ -255,11 +255,83 @@ graph TD
 
 ---
 
-## PHẦN 3: ĐỐI CHIẾU TIÊU CHÍ CHẤM ĐIỂM OOAD SGU
+## PHẦN 3: LỰA CHỌN CÔNG NGHỆ, NGÔN NGỮ VÀ MÔI TRƯỜNG PHÁT TRIỂN ỨNG DỤNG
+
+Nhằm đáp ứng tối đa các yêu cầu học thuật khắt khe của môn học **Phân tích Thiết kế Hướng đối tượng (OOAD)** tại Trường Đại học Sài Gòn (SGU), nhóm thống nhất lựa chọn nền tảng công nghệ, ngôn ngữ và môi trường phát triển như sau:
+
+### 3.1. Bảng tổng hợp Công nghệ và Môi trường phát triển
+
+| Thành phần | Công nghệ / Nền tảng được chọn | Vai trò & Mục đích sử dụng |
+| :--- | :--- | :--- |
+| **Môi trường phát triển (IDE)** | **Visual Studio Code (VS Code)** | Môi trường phát triển ứng dụng chính thống nhất cho toàn nhóm. Cài đặt các extension chuyên dụng: *Extension Pack for Java, Spring Boot Extension Pack, Vite/React Snippets, PostgreSQL Client, Mermaid Previewer*. |
+| **Ngôn ngữ & Nền tảng Backend** | **Java (JDK 17/21 LTS) + Spring Boot 3.x** | Xây dựng lõi nghiệp vụ hướng đối tượng (OOAD Core), cung cấp hệ thống RESTful API chuẩn mực, xử lý logic kiểm tra trùng lịch, khóa giữ slot sân, tính giá động và hóa đơn tổng hợp. |
+| **Ngôn ngữ & Nền tảng Frontend** | **JavaScript / TypeScript + React (Vite)** | Xây dựng giao diện ứng dụng web Single Page App (SPA) tách biệt: Giao diện Khách hàng đặt sân trực quan (ma trận Timeline Grid) và Giao diện Lễ tân POS tại sân (sơ đồ đổi màu trạng thái sân theo thời gian thực). |
+| **Hệ quản trị Cơ sở dữ liệu** | **PostgreSQL (v15+)** | Lưu trữ dữ liệu quan hệ chuẩn 3NF (BTH7), hỗ trợ Transaction ACID nghiêm ngặt và kỹ thuật khóa dữ liệu (`SELECT ... FOR UPDATE`) chống đặt trùng sân đồng thời. |
+| **Công cụ quản lý & Thiết kế** | **Git / GitHub, Draw.io, StarUML, Postman** | Quản lý mã nguồn tập trung, thiết kế trực quan sơ đồ phân tích và kiểm thử API. |
+
+---
+
+### 3.2. Mô hình Kiến trúc: Tách biệt Frontend và Backend (Client - Server RESTful Architecture)
+
+Hệ thống được chia tách thành **2 project riêng biệt** nằm trong thư mục `ChuongTrinh/Source code/`:
+
+```text
+ChuongTrinh/Source code/
+├── sports-backend/                    # [PROJECT 1] Java Spring Boot (1 Project Monolith phân tầng)
+│   ├── src/main/java/vn/edu/sgu/sports/
+│   │   ├── config/                    # Cấu hình Security, CORS, Swagger OpenAPI
+│   │   ├── controller/                # Tầng Presentation (REST Controller tiếp nhận yêu cầu)
+│   │   ├── service/                   # Tầng Business Logic (Nghiệp vụ tính giá, kiểm tra slot, hủy cọc)
+│   │   ├── repository/                # Tầng Data Access (Spring Data JPA giao tiếp PostgreSQL)
+│   │   ├── entity/                    # Tầng Domain Model (Khớp 100% với Class Diagram BTH6)
+│   │   ├── dto/                       # Data Transfer Object truyền tải dữ liệu API
+│   │   └── exception/                 # Xử lý ngoại lệ nghiệp vụ tập trung
+│   ├── src/main/resources/
+│   │   └── application.properties     # Cấu hình kết nối PostgreSQL (Port 8088, DB sports_complex_db)
+│   └── pom.xml                        # Quản lý thư viện phụ thuộc Maven
+│
+├── sports-frontend/                   # [PROJECT 2] React (Vite) - Single Page Application
+│   ├── src/
+│   │   ├── pages/
+│   │   │   ├── customer/              # Màn hình Khách: Tra cứu sân trống, Đặt sân, Thanh toán cọc QR
+│   │   │   ├── receptionist_pos/      # Màn hình Lễ tân: Sơ đồ cụm sân trực quan, Check-in QR, POS bán lẻ
+│   │   │   └── admin/                 # Màn hình Quản lý: Cấu hình bảng giá ma trận, Báo cáo doanh thu
+│   │   ├── components/                # Components giao diện dùng chung (Lưới giờ, Card sân, Modal)
+│   │   └── services/                  # Tầng giao tiếp HTTP gọi REST API sang Backend (Axios)
+│   ├── package.json
+│   └── vite.config.js
+│
+└── run_all.bat                        # File kịch bản khởi động đồng thời cả Backend và Frontend 1-click
+```
+
+---
+
+### 3.3. Lý do lựa chọn và Khả năng đáp ứng tiêu chí chấm điểm OOAD tại SGU
+
+1. **Tính đối tượng thuần khiết (Pure Object-Oriented):**
+   * **Java** là ngôn ngữ kiểu tĩnh (Static typing) chuẩn mực, giúp thể hiện triệt để các nguyên lý OOP: **Kế thừa** (`Court` $\rightarrow$ `BadmintonCourt`, `PickleballCourt`), **Đa hình** (phương thức tính giá linh hoạt theo khung giờ), **Đóng gói** và **Trừu tượng hóa** (Interface/Abstract Class).
+   * Cấu trúc các Entity trong Java ánh xạ khớp chính xác **1 - 1** với **Sơ đồ lớp (BTH6 Class Diagram)**, giúp việc đối chiếu giữa bản thiết kế và mã nguồn thực tế khi vấn đáp đạt điểm tuyệt đối.
+
+2. **Cơ sở dữ liệu PostgreSQL chuẩn mực cho đề tài đặt sân:**
+   * PostgreSQL tuân thủ tuyệt đối các ràng buộc quan hệ toàn vẹn (Foreign Key, Unique Key, Check Constraint), thể hiện hoàn hảo mô hình **RDM chuẩn 3NF (BTH7)**.
+   * Xử lý cực kỳ mạnh mẽ các bài toán tranh chấp tài nguyên (Concurrency control) trong việc **khóa giữ chỗ slot giờ tạm thời trong 10 phút** và **chống đặt trùng sân (Overbooking)** bằng Transaction Isolation.
+
+3. **Giao diện hiện đại, tối ưu cho trải nghiệm Lễ tân & Khách hàng:**
+   * Việc tách riêng giao diện bằng **React (Vite)** giúp xây dựng màn hình **Lễ tân POS với sơ đồ cụm sân trực quan đổi màu theo thời gian thực** (Xanh: Trống, Đỏ: Đang chơi, Vàng: Chờ xác thực) mà không gây giật/tải lại toàn bộ trang web.
+   * Đảm bảo tính mở rộng cao cho phép hỗ trợ tốt trên cả màn hình máy tính bàn của Lễ tân và thiết bị di động của Khách hàng.
+
+4. **Tối ưu hóa cho Vấn đáp & Live Coding (2 – 3 phút):**
+   * Backend tổ chức dưới dạng **1 Project Java duy nhất (Modular Monolith)** giúp việc demo nhẹ nhàng, không gặp sự cố về mạng nội bộ hay phải bật nhiều tiến trình microservice phức tạp.
+   * Khi Thầy/Cô yêu cầu sửa trực tiếp mã nguồn trong phòng thi (ví dụ: *thêm loại sân mới, đổi công thức tính phụ phí quá giờ, bổ sung thuộc tính*), sinh viên chỉ cần chỉnh sửa tại đúng lớp Service/Entity trong VS Code và khởi động lại dịch vụ tức thì.
+
+---
+
+## PHẦN 4: ĐỐI CHIẾU TIÊU CHÍ CHẤM ĐIỂM OOAD SGU
 
 1. **Tính đối tượng (Object-Oriented):** 
    * Tách biệt rõ ràng các thực thể: `Court` (Sân), `TimeSlot` (Khung giờ), `Booking` (Đơn đặt), `RentalOrder` (Thuê đồ), `Invoice` (Hóa đơn), `Product` (Hàng hóa), `Customer` (Khách hàng).
    * Áp dụng kế thừa đa hình trên lớp Sân và quy tắc tính giá giờ cao điểm/cuối tuần.
 2. **Tính khả thi của đồ án:**
-   * Dễ dàng cài đặt bằng mô hình 3 lớp (Presentation, Business Logic, Data Access) trên WinForms/WPF (C#) hoặc Web (React + Spring Boot / ASP.NET Core).
-   * Phù hợp để vấn đáp trực tiếp trên laptop: Thầy/cô yêu cầu *"Thêm một loại sân mới (Sân Tennis)"* hoặc *"Đổi mức phụ phí cuối tuần từ 20% lên 30%"* có thể live-code sửa trong 2 phút.
+   * Cài đặt bằng mô hình phân tầng tiêu chuẩn (Client SPA React + Backend REST API Java Spring Boot + PostgreSQL).
+   * Phù hợp để vấn đáp trực tiếp trên laptop: Thầy/cô yêu cầu *"Thêm một loại sân mới (Sân Tennis)"* hoặc *"Đổi mức phụ phí cuối tuần từ 20% lên 30%"* có thể live-code sửa trong 2 phút trên VS Code.
+

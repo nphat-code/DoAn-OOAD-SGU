@@ -37,10 +37,12 @@ CẤU TRÚC THƯ MỤC NỘP BÀI:
     └── Tham Khảo/           : Tài liệu, chuẩn thiết kế, tài liệu tham khảo khi làm đồ án
 
 --------------------------------------------------------------------------------
-CÔNG NGHỆ DỰ KIẾN:
-- Ngôn ngữ & Nền tảng: C# .NET / Java (Spring Boot) / Node.js (NestJS) + Frontend Web/App
-- Cơ sở dữ liệu: Microsoft SQL Server / MySQL
-- Công cụ thiết kế: StarUML, Lucidchart, Draw.io
+CÔNG NGHỆ & MÔI TRƯỜNG PHÁT TRIỂN CHÍNH THỨC:
+- Môi trường phát triển (IDE): Visual Studio Code (VS Code)
+- Backend: Java (JDK 17/21 LTS) + Spring Boot 3.x (RESTful API Monolith)
+- Frontend: JavaScript / TypeScript + React (Vite) - Single Page Application
+- Cơ sở dữ liệu: PostgreSQL (v15+)
+- Công cụ thiết kế & quản lý: Git/GitHub, Draw.io, StarUML, Postman
 
 --------------------------------------------------------------------------------
 LIÊN KẾT KHẢO SÁT THỰC TẾ (BTH2):
