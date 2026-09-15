@@ -181,9 +181,6 @@ flowchart LR
 
     Staff --- UC21
     Staff --- UC22
-    Staff --- UC23
-    Staff --- UC24
-    Staff --- UC25
 
     %% Includes & Extends
     UC22 -.->|<<include>>| UC21
@@ -384,9 +381,9 @@ Bảng ma trận thể hiện quyền truy cập và thực thi của từng vai
 | **UC1.4** | Cấu hình phụ thu và chính sách hoàn cọc | | | | | **X** |
 | **UC2.1** | Tra cứu lịch sân trống | **X** | **X** | **X** | | **X** |
 | **UC2.2** | Đặt sân theo lượt | | **X** | **X** | | **X** |
-| **UC2.3** | Đặt lịch sân cố định theo tháng | | **X** | **X** | | **X** |
-| **UC2.4** | Hủy đặt sân và xử lý hoàn cọc | | **X** | **X** | | **X** |
-| **UC2.5** | Điều chỉnh lịch đặt sân | | **X** | **X** | | **X** |
+| **UC2.3** | Đặt lịch sân cố định theo tháng | | **X** | | | **X** |
+| **UC2.4** | Hủy đặt sân và xử lý hoàn cọc | | **X** | | | **X** |
+| **UC2.5** | Điều chỉnh lịch đặt sân | | **X** | | | **X** |
 | **UC3.1** | Tiếp nhận khách và check-in | | | **X** | | **X** |
 | **UC3.2** | Quản lý cho thuê dụng cụ | | | **X** | | **X** |
 | **UC3.3** | Bán lẻ nước giải khát và phụ kiện | | | **X** | | **X** |
