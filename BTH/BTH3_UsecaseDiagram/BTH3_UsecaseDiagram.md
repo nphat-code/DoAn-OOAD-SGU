@@ -38,7 +38,7 @@ flowchart TD
 | **4** | **Nhân viên Thủ kho** *(Inventory Staff)* | Primary Actor | Quản lý kho hàng hóa và tài sản: Tiếp nhận nhập kho nước uống/phụ kiện, theo dõi số lượng và tình trạng hư hỏng của dụng cụ cho thuê, lập phiếu kiểm kê và nhận cảnh báo khi tồn kho chạm mức tối thiểu. |
 | **5** | **Quản trị viên / Chủ sân** *(Manager / Administrator)* | Primary Actor | Người có quyền cao nhất: Thiết lập danh mục sân/loại sân/môn thể thao, cấu hình bảng giá ma trận (Giờ thường vs Giờ cao điểm, Ngày thường vs Cuối tuần/Lễ), cấu hình phụ thu & tỷ lệ hoàn cọc, quản lý nhân viên, phân quyền và theo dõi các báo cáo thống kê kinh doanh (Doanh thu, Tỷ lệ lấp đầy sân). |
 | **6** | **Cổng thanh toán trực tuyến** *(Payment Gateway)* | Secondary Actor | Hệ thống bên thứ 3 (VNPay, MoMo, VietQR) chịu trách nhiệm xử lý các giao dịch thanh toán tiền cọc trực tuyến và trả về mã xác thực giao dịch (`Transaction_ID`) cho hệ thống. |
-| **7** | **Hệ thống SMS/Email Gateway** | Secondary Actor | Dịch vụ gửi thông báo tự động (Mã OTP xác thực, Thông tin đặt sân thành công kèm mã QR check-in, Lời nhắc lịch chơi trước 2 tiếng). |
+| **7** | **Hệ thống SMS / Email Gateway** | Secondary Actor | Dịch vụ gửi thông báo tự động (Mã OTP xác thực, Thông tin đặt sân thành công kèm mã QR check-in, Lời nhắc lịch chơi trước 2 tiếng). |
 
 ---
 
@@ -49,8 +49,8 @@ Theo đúng **Quy tắc Ranh giới Hệ thống (System Boundary Rule)** trong 
 ```mermaid
 flowchart LR
     %% Actors
-    ActorGuest["👤 Khách vãng lai"]
-    ActorCustomer["👤 Khách thành viên"]
+    ActorGuest["👤 Khách hàng vãng lai"]
+    ActorCustomer["👤 Khách hàng thành viên"]
     ActorStaff["👤 Nhân viên Lễ tân / Thu ngân"]
     ActorWarehouse["👤 Nhân viên Thủ kho"]
     ActorAdmin["👤 Quản trị viên / Chủ sân"]
@@ -152,11 +152,11 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    Guest["👤 Khách vãng lai"]
-    Customer["👤 Khách thành viên"]
+    Guest["👤 Khách hàng vãng lai"]
+    Customer["👤 Khách hàng thành viên"]
     Staff["👤 Nhân viên Lễ tân / Thu ngân"]
     PaymentGW["💳 Cổng thanh toán trực tuyến"]
-    NotifyGW["📱 SMS/Email Gateway"]
+    NotifyGW["📱 Hệ thống SMS / Email Gateway"]
 
     subgraph Subsystem2 ["PHÂN HỆ 2: QUẢN LÝ ĐẶT SÂN VÀ LỊCH THI ĐẤU"]
         UC21(["UC2.1: Tra cứu lịch sân trống"])

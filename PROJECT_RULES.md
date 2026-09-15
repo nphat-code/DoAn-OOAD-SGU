@@ -69,7 +69,7 @@ DoAn-OOAD/
 Tuyệt đối không để xảy ra tình trạng "bài này một chức năng, bài kia lại chức năng khác". Toàn bộ 8 bài thực hành phải tuân thủ nghiêm ngặt ma trận ánh xạ 1 - 1:
 
 1. **Bộ Actor cố định**:
-   * Khách vãng lai (`Guest`), Khách thành viên (`Member Customer`), Lễ tân/Thu ngân (`Receptionist`), Thủ kho (`Inventory Staff`), Quản trị/Chủ sân (`Manager/Admin`), Cổng thanh toán (`Payment Gateway`), Dịch vụ SMS/Email.
+   * Khách hàng vãng lai (`Guest`), Khách hàng thành viên (`Member Customer`), Nhân viên Lễ tân / Thu ngân (`Receptionist / Cashier`), Nhân viên Thủ kho (`Inventory Staff`), Quản trị viên / Chủ sân (`Manager / Administrator`), Cổng thanh toán trực tuyến (`Payment Gateway`), Hệ thống SMS / Email Gateway.
 2. **Vòng đời trạng thái sân (Court Lifecycle)**:
    * `Available` $\rightarrow$ `Booked` (Khóa tạm 10p / Đã cọc 30%) $\rightarrow$ `Occupied` (Check-in QR) $\rightarrow$ `Maintenance`.
 3. **Công thức Hóa đơn tổng hợp (Composite Invoice)**:
