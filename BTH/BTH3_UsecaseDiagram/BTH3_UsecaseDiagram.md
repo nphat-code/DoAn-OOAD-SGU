@@ -34,26 +34,26 @@ flowchart TD
 | :---: | :--- | :---: | :--- |
 | **1** | **Khách hàng vãng lai** *(Guest)* | Primary Actor | Người dùng chưa đăng nhập, chỉ có quyền tra cứu thông tin cụm sân, xem bảng giá theo giờ và kiểm tra lưới khung giờ còn trống (Timeline Grid). |
 | **2** | **Khách hàng thành viên** *(Member Customer)* | Primary Actor *(Kế thừa Guest)* | Người chơi đã có tài khoản định danh, có thể đặt sân theo lượt, đăng ký lịch cố định theo tháng, thanh toán tiền cọc trực tuyến, nhận mã QR check-in, quản lý lịch sử đặt chỗ, hủy/đổi lịch và tích lũy điểm thưởng hội viên. |
-| **3** | **Nhân viên Lễ tân / Thu ngân** *(Receptionist)* | Primary Actor | Người trực tiếp vận hành tại quầy: Quét mã QR check-in tiếp nhận khách, gán sân trực tiếp cho khách vãng lai tại chỗ, lập phiếu cho thuê dụng cụ thể thao (vợt/bóng), bán lẻ nước uống/phụ kiện, theo dõi cảnh báo lố giờ và lập hóa đơn thanh toán tổng hợp POS. |
+| **3** | **Nhân viên Lễ tân / Thu ngân** *(Receptionist / Cashier)* | Primary Actor | Người trực tiếp vận hành tại quầy: Quét mã QR check-in tiếp nhận khách, gán sân trực tiếp cho khách vãng lai tại chỗ, lập phiếu cho thuê dụng cụ thể thao (vợt/bóng), bán lẻ nước uống/phụ kiện, theo dõi cảnh báo lố giờ và lập hóa đơn thanh toán tổng hợp POS. |
 | **4** | **Nhân viên Thủ kho** *(Inventory Staff)* | Primary Actor | Quản lý kho hàng hóa và tài sản: Tiếp nhận nhập kho nước uống/phụ kiện, theo dõi số lượng và tình trạng hư hỏng của dụng cụ cho thuê, lập phiếu kiểm kê và nhận cảnh báo khi tồn kho chạm mức tối thiểu. |
-| **5** | **Quản trị viên / Chủ sân** *(Manager / Admin)* | Primary Actor | Người có quyền cao nhất: Thiết lập danh mục sân/loại sân/môn thể thao, cấu hình bảng giá ma trận (Giờ thường vs Giờ cao điểm, Ngày thường vs Cuối tuần/Lễ), cấu hình phụ thu & tỷ lệ hoàn cọc, quản lý nhân viên, phân quyền và theo dõi các báo cáo thống kê kinh doanh (Doanh thu, Tỷ lệ lấp đầy sân). |
+| **5** | **Quản trị viên / Chủ sân** *(Manager / Administrator)* | Primary Actor | Người có quyền cao nhất: Thiết lập danh mục sân/loại sân/môn thể thao, cấu hình bảng giá ma trận (Giờ thường vs Giờ cao điểm, Ngày thường vs Cuối tuần/Lễ), cấu hình phụ thu & tỷ lệ hoàn cọc, quản lý nhân viên, phân quyền và theo dõi các báo cáo thống kê kinh doanh (Doanh thu, Tỷ lệ lấp đầy sân). |
 | **6** | **Cổng thanh toán trực tuyến** *(Payment Gateway)* | Secondary Actor | Hệ thống bên thứ 3 (VNPay, MoMo, VietQR) chịu trách nhiệm xử lý các giao dịch thanh toán tiền cọc trực tuyến và trả về mã xác thực giao dịch (`Transaction_ID`) cho hệ thống. |
 | **7** | **Hệ thống SMS/Email Gateway** | Secondary Actor | Dịch vụ gửi thông báo tự động (Mã OTP xác thực, Thông tin đặt sân thành công kèm mã QR check-in, Lời nhắc lịch chơi trước 2 tiếng). |
 
 ---
 
-## PHẦN 2: SƠ ĐỒ USE CASE TỔNG THỂ HỆ THỐNG (SYSTEM OVERVIEW USE CASE DIAGRAM)
+## PHẦN 2: SƠ ĐỒ USE CASE TỔNG THỂ (OVERALL USE CASE DIAGRAM)
 
-Sơ đồ tổng quan thể hiện sự phân bổ chức năng giữa 5 nhóm tác nhân chính và 5 phân hệ nghiệp vụ cốt lõi của hệ thống:
+Theo đúng **Quy tắc Ranh giới Hệ thống (System Boundary Rule)** trong `PROJECT_RULES.md`, sơ đồ tổng thể được bao bọc bởi **DUY NHẤT 1 Khung lớn** đại diện cho toàn bộ hệ thống, chứa 5 phân hệ lớn cấp 1 và toàn bộ các tác nhân:
 
 ```mermaid
 flowchart LR
     %% Actors
     ActorGuest["👤 Khách vãng lai"]
     ActorCustomer["👤 Khách thành viên"]
-    ActorStaff["👤 Lễ tân / Thu ngân"]
+    ActorStaff["👤 Nhân viên Lễ tân / Thu ngân"]
     ActorWarehouse["👤 Nhân viên Thủ kho"]
-    ActorAdmin["👤 Quản trị / Chủ sân"]
+    ActorAdmin["👤 Quản trị viên / Chủ sân"]
 
     %% External System Actors
     ActorPayment["💳 Cổng thanh toán trực tuyến<br>(VNPay / MoMo)"]
