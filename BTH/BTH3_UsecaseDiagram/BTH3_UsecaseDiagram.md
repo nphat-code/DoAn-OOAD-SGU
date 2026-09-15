@@ -154,6 +154,7 @@ flowchart LR
 flowchart LR
     Guest["👤 Khách vãng lai"]
     Customer["👤 Khách thành viên"]
+    Staff["👤 Nhân viên Lễ tân / Thu ngân"]
     PaymentGW["💳 Cổng thanh toán"]
     NotifyGW["📱 SMS/Email Gateway"]
 
@@ -177,6 +178,12 @@ flowchart LR
     Customer --- UC23
     Customer --- UC24
     Customer --- UC25
+
+    Staff --- UC21
+    Staff --- UC22
+    Staff --- UC23
+    Staff --- UC24
+    Staff --- UC25
 
     %% Includes & Extends
     UC22 -.->|<<include>>| UC21
