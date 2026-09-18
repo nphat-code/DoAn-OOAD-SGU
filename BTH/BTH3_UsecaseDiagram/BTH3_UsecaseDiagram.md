@@ -241,8 +241,8 @@ flowchart LR
     UC_Overtime -.->|<<extend>>| UC35
     UC_Voucher -.->|<<extend>>| UC35
 
-    UC32 -.->|<<include>>| UC35
-    UC33 -.->|<<include>>| UC35
+    UC35 -.->|<<include>>| UC32
+    UC35 -.->|<<include>>| UC33
 ```
 
 ---
