@@ -286,7 +286,7 @@ Phân hệ dành cho **Quản trị viên** theo dõi hiệu quả kinh doanh v�
 
 ```mermaid
 flowchart LR
-    Customer["👤 Khách thành viên"]
+    Customer["👤 Khách hàng thành viên"]
     Admin["👤 Quản trị viên / Chủ sân"]
 
     subgraph Subsystem5 ["PHÂN HỆ 5: QUẢN LÝ KHÁCH HÀNG VÀ BÁO CÁO"]
