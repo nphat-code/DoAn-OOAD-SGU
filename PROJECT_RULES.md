@@ -87,6 +87,10 @@ Tuyệt đối không để xảy ra tình trạng "bài này một chức năng
        5. Quy tắc vận hành trong `PROJECT_RULES.md`.
      * **TUYỆT ĐỐI KHÔNG**: Chỉ sửa cục bộ ở một tài liệu mà bỏ sót các tài liệu liên quan, gây ra mâu thuẫn hay lệch pha giữa các bước phân tích thiết kế.
 
+6. **Quy chuẩn thông điệp Git Commit (English Conventional Commits - BẮT BUỘC)**:
+   * Mọi commit message bắt buộc phải viết **100% bằng tiếng Anh** tuân theo chuẩn **Conventional Commits** (`feat:`, `fix:`, `docs:`, `refactor:`, `style:`, `chore:`).
+   * Tuyệt đối không commit bằng tiếng Việt.
+
 ---
 
 ## 6. QUY CHUẨN THIẾT KẾ SƠ ĐỒ USE CASE & NGUYÊN TẮC HỌC THUẬT UML (BTH3 & BTH4)
