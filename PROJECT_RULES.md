@@ -93,7 +93,7 @@ Tuyệt đối không để xảy ra tình trạng "bài này một chức năng
 Để đảm bảo đạt điểm tối đa khi chấm bài và vấn đáp trực tiếp với Thầy/Cô bộ môn, toàn bộ thành viên và AI Assistant phải tuân thủ nghiêm ngặt các quy tắc sau:
 
 1. **Đồng nhất từng chữ với BFD (Literal 1:1 Consistency)**:
-   * Tên của **5 Phân hệ lớn** và **24 Use Case chính** trong sơ đồ và tài liệu BTH3, BTH4 phải khớp từng chữ cái với cây phân rã BFD (BTH1).
+   * Tên của **5 Phân hệ lớn** và **25 Use Case chính** trong sơ đồ và tài liệu BTH3, BTH4 phải khớp từng chữ cái với cây phân rã BFD (BTH1).
    * Tuyệt đối không tự ý thêm bớt các từ ngữ phụ thuộc diễn giải cá nhân (Ví dụ: KHÔNG thêm `- POS`, KHÔNG thêm `bảng giá`, KHÔNG thêm `& Dụng cụ`, KHÔNG thêm `(Occupancy Rate)`).
 
 2. **Quy tắc Ranh giới Hệ thống (System Boundary Rule)**:

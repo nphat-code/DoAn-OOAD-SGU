@@ -291,34 +291,29 @@ flowchart LR
 
     subgraph Subsystem5 ["PHÂN HỆ 5: QUẢN LÝ KHÁCH HÀNG VÀ BÁO CÁO"]
         UC51(["UC5.1: Quản lý khách hàng và thẻ hội viên"])
-        UC511(["UC5.1.1: Đăng ký và nâng hạng thẻ hội viên"])
-        UC512(["UC5.1.2: Tra cứu điểm tích lũy và đổi ưu đãi"])
+        UC52(["UC5.2: Tra cứu điểm tích lũy và đổi ưu đãi"])
+        UC53(["UC5.3: Quản lý khuyến mãi và voucher"])
 
-        UC52(["UC5.2: Quản lý khuyến mãi và voucher"])
+        UC54(["UC5.4: Báo cáo doanh thu"])
+        UC541(["UC5.4.1: Báo cáo doanh thu tiền sân"])
+        UC542(["UC5.4.2: Báo cáo doanh thu dịch vụ phụ trợ"])
+        UC543(["UC5.4.3: Báo cáo doanh thu theo hình thức thanh toán"])
 
-        UC53(["UC5.3: Báo cáo doanh thu"])
-        UC531(["UC5.3.1: Báo cáo doanh thu tiền sân"])
-        UC532(["UC5.3.2: Báo cáo doanh thu dịch vụ phụ trợ"])
-        UC533(["UC5.3.3: Báo cáo doanh thu theo hình thức thanh toán"])
-
-        UC54(["UC5.4: Báo cáo tỷ lệ lấp đầy sân"])
-        UC55(["UC5.5: Quản trị hệ thống và phân quyền"])
+        UC55(["UC5.5: Báo cáo tỷ lệ lấp đầy sân"])
+        UC56(["UC5.6: Quản trị hệ thống và phân quyền"])
     end
 
-    Customer --- UC512
+    Customer --- UC52
 
     Admin --- UC51
-    Admin --- UC52
     Admin --- UC53
     Admin --- UC54
     Admin --- UC55
+    Admin --- UC56
 
-    UC511 -->|Kế thừa| UC51
-    UC512 -->|Kế thừa| UC51
-
-    UC531 -->|Kế thừa| UC53
-    UC532 -->|Kế thừa| UC53
-    UC533 -->|Kế thừa| UC53
+    UC541 -->|Kế thừa| UC54
+    UC542 -->|Kế thừa| UC54
+    UC543 -->|Kế thừa| UC54
 ```
 
 ---
@@ -364,16 +359,15 @@ flowchart LR
   * `UC1.3.1: Thiết lập giá giờ tiêu chuẩn`, `UC1.3.2: Thiết lập giá giờ cao điểm` kế thừa từ `UC1.3: Cấu hình bảng giá theo khung giờ`.
   * `UC1.4.1: Cấu hình phụ thu cuối tuần và ngày lễ`, `UC1.4.2: Cấu hình phụ thu quá giờ chơi`, `UC1.4.3: Cấu hình tỷ lệ hoàn cọc` kế thừa từ `UC1.4: Cấu hình phụ thu và chính sách hoàn cọc`.
   * `UC3.1.1: Quét mã QR xác thực khách đặt trước` và `UC3.1.2: Mở sân trực tiếp cho khách vãng lai` kế thừa từ `UC3.1: Tiếp nhận khách và check-in`.
-  * `UC5.1.1: Đăng ký và nâng hạng thẻ hội viên`, `UC5.1.2: Tra cứu điểm tích lũy và đổi ưu đãi` kế thừa từ `UC5.1: Quản lý khách hàng và thẻ hội viên`.
-  * `UC5.3.1: Báo cáo doanh thu tiền sân`, `UC5.3.2: Báo cáo doanh thu dịch vụ phụ trợ`, `UC5.3.3: Báo cáo doanh thu theo hình thức thanh toán` kế thừa từ `UC5.3: Báo cáo doanh thu`.
+  * `UC5.4.1: Báo cáo doanh thu tiền sân`, `UC5.4.2: Báo cáo doanh thu dịch vụ phụ trợ`, `UC5.4.3: Báo cáo doanh thu theo hình thức thanh toán` kế thừa từ `UC5.4: Báo cáo doanh thu`.
 
 ---
 
 ## PHẦN 5: MA TRẬN PHÂN QUYỀN ACTOR - USE CASE (ACCESS CONTROL MATRIX)
 
-Bảng ma trận thể hiện quyền truy cập và thực thi của từng vai trò (Role) đối với toàn bộ 24 Use Case chính trong hệ thống:
+Bảng ma trận thể hiện quyền truy cập và thực thi của từng vai trò (Role) đối với toàn bộ 25 Use Case chính trong hệ thống:
 
-| Mã UC | Tên Use Case | Khách vãng lai | Khách thành viên | Lễ tân / Thu ngân | Thủ kho | Quản trị / Chủ sân |
+| Mã UC | Tên Use Case | Khách hàng vãng lai | Khách hàng thành viên | Nhân viên Lễ tân / Thu ngân | Nhân viên Thủ kho | Quản trị viên / Chủ sân |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: |
 | **UC1.1** | Quản lý danh mục sân | | | | | **X** |
 | **UC1.2** | Quản lý loại sân và môn thể thao | | | | | **X** |
@@ -394,11 +388,12 @@ Bảng ma trận thể hiện quyền truy cập và thực thi của từng vai
 | **UC4.3** | Quản lý tài sản dụng cụ cho thuê | | | | **X** | **X** |
 | **UC4.4** | Ghi nhận hư hỏng và đền bù | | | | **X** | **X** |
 | **UC4.5** | Cảnh báo tồn kho an toàn | | | | **X** | **X** |
-| **UC5.1** | Quản lý khách hàng và thẻ hội viên | | **X** *(Xem điểm)* | **X** *(Tra cứu)* | | **X** *(Toàn quyền)* |
-| **UC5.2** | Quản lý khuyến mãi và voucher | | **X** *(Xem)* | **X** *(Áp dụng)* | | **X** *(Tạo mới)* |
-| **UC5.3** | Báo cáo doanh thu | | | **X** *(Theo ca)* | | **X** *(Toàn bộ)* |
-| **UC5.4** | Báo cáo tỷ lệ lấp đầy sân | | | | | **X** |
-| **UC5.5** | Quản trị hệ thống và phân quyền | | | | | **X** |
+| **UC5.1** | Quản lý khách hàng và thẻ hội viên | | | **X** *(Tra cứu)* | | **X** *(Toàn quyền)* |
+| **UC5.2** | Tra cứu điểm tích lũy và đổi ưu đãi | | **X** | | | **X** *(Quản trị)* |
+| **UC5.3** | Quản lý khuyến mãi và voucher | | **X** *(Xem)* | **X** *(Áp dụng)* | | **X** *(Tạo mới)* |
+| **UC5.4** | Báo cáo doanh thu | | | **X** *(Theo ca)* | | **X** *(Toàn bộ)* |
+| **UC5.5** | Báo cáo tỷ lệ lấp đầy sân | | | | | **X** |
+| **UC5.6** | Quản trị hệ thống và phân quyền | | | | | **X** |
 
 ---
 
@@ -409,4 +404,4 @@ Bảng ma trận thể hiện quyền truy cập và thực thi của từng vai
    * Sử dụng đúng quan hệ `<<include>>` (mũi tên đứt nét trỏ từ UC chính sang UC bắt buộc).
    * Sử dụng đúng quan hệ `<<extend>>` (mũi tên đứt nét trỏ từ UC mở rộng về UC chính kèm Extension Point).
    * Phân biệt rõ ràng Actor chính (Human) và Actor phụ (Hệ thống cổng thanh toán / SMS).
-3. **Tính sẵn sàng cho BTH4 (Đặc tả Use Case):** Danh sách 24 Use Case chính này là đầu vào trực tiếp để lựa chọn và viết đặc tả chi tiết trong BTH4.
+3. **Tính sẵn sàng cho BTH4 (Đặc tả Use Case):** Danh sách 25 Use Case chính này là đầu vào trực tiếp để lựa chọn và viết đặc tả chi tiết trong BTH4.

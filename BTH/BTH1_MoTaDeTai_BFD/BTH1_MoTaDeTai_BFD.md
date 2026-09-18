@@ -142,15 +142,14 @@ HỆ THỐNG QUẢN LÝ CỤM SÂN THỂ THAO VÀ ĐẶT SÂN
 │
 └── 5.0 QUẢN LÝ KHÁCH HÀNG VÀ BÁO CÁO
     ├── 5.1 Quản lý khách hàng và thẻ hội viên
-    │   ├── 5.1.1 Đăng ký và nâng hạng thẻ hội viên
-    │   └── 5.1.2 Tra cứu điểm tích lũy và đổi ưu đãi
-    ├── 5.2 Quản lý khuyến mãi và voucher
-    ├── 5.3 Báo cáo doanh thu
-    │   ├── 5.3.1 Báo cáo doanh thu tiền sân
-    │   ├── 5.3.2 Báo cáo doanh thu dịch vụ phụ trợ
-    │   └── 5.3.3 Báo cáo doanh thu theo hình thức thanh toán
-    ├── 5.4 Báo cáo tỷ lệ lấp đầy sân
-    └── 5.5 Quản trị hệ thống và phân quyền
+    ├── 5.2 Tra cứu điểm tích lũy và đổi ưu đãi
+    ├── 5.3 Quản lý khuyến mãi và voucher
+    ├── 5.4 Báo cáo doanh thu
+    │   ├── 5.4.1 Báo cáo doanh thu tiền sân
+    │   ├── 5.4.2 Báo cáo doanh thu dịch vụ phụ trợ
+    │   └── 5.4.3 Báo cáo doanh thu theo hình thức thanh toán
+    ├── 5.5 Báo cáo tỷ lệ lấp đầy sân
+    └── 5.6 Quản trị hệ thống và phân quyền
 ```
 
 ---
@@ -228,18 +227,16 @@ graph TD
 
     %% 5.0
     F5 --> F51["5.1 Quản lý khách hàng và thẻ hội viên"]
-    F51 --> F511["5.1.1 Đăng ký và nâng hạng thẻ hội viên"]
-    F51 --> F512["5.1.2 Tra cứu điểm tích lũy và đổi ưu đãi"]
+    F5 --> F52["5.2 Tra cứu điểm tích lũy và đổi ưu đãi"]
+    F5 --> F53["5.3 Quản lý khuyến mãi và voucher"]
 
-    F5 --> F52["5.2 Quản lý khuyến mãi và voucher"]
+    F5 --> F54["5.4 Báo cáo doanh thu"]
+    F54 --> F541["5.4.1 Báo cáo doanh thu tiền sân"]
+    F54 --> F542["5.4.2 Báo cáo doanh thu dịch vụ phụ trợ"]
+    F54 --> F543["5.4.3 Báo cáo doanh thu theo hình thức thanh toán"]
 
-    F5 --> F53["5.3 Báo cáo doanh thu"]
-    F53 --> F531["5.3.1 Báo cáo doanh thu tiền sân"]
-    F53 --> F532["5.3.2 Báo cáo doanh thu dịch vụ phụ trợ"]
-    F53 --> F533["5.3.3 Báo cáo doanh thu theo hình thức thanh toán"]
-
-    F5 --> F54["5.4 Báo cáo tỷ lệ lấp đầy sân"]
-    F5 --> F55["5.5 Quản trị hệ thống và phân quyền"]
+    F5 --> F55["5.5 Báo cáo tỷ lệ lấp đầy sân"]
+    F5 --> F56["5.6 Quản trị hệ thống và phân quyền"]
 
     %% Styling
     classDef root fill:#003366,stroke:#001F3F,stroke-width:2px,color:#fff,font-weight:bold;
@@ -249,8 +246,8 @@ graph TD
 
     class Root root;
     class F1,F2,F3,F4,F5 level1;
-    class F11,F12,F13,F14,F21,F22,F23,F24,F25,F31,F32,F33,F34,F35,F41,F42,F43,F44,F45,F51,F52,F53,F54,F55 level2;
-    class F111,F112,F113,F121,F122,F131,F132,F141,F142,F143,F221,F222,F223,F231,F311,F312,F321,F322,F323,F351,F352,F511,F512,F531,F532,F533 level3;
+    class F11,F12,F13,F14,F21,F22,F23,F24,F25,F31,F32,F33,F34,F35,F41,F42,F43,F44,F45,F51,F52,F53,F54,F55,F56 level2;
+    class F111,F112,F113,F121,F122,F131,F132,F141,F142,F143,F221,F222,F223,F231,F311,F312,F321,F322,F323,F351,F352,F541,F542,F543 level3;
 ```
 
 ---
